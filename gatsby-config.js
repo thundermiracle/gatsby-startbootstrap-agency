@@ -1,8 +1,10 @@
+const path = require("path");
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Gatsyby startbootstrap-agency`,
+    description: `gatsby version of startbootstrap-agency with i18n support.`,
+    author: `thundermiracle`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -20,7 +22,13 @@ module.exports = {
         icon: `src/img/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-sass`,
+    {
+      resolve: "gatsby-plugin-sass",
+      options: {
+        data: `@import "core.scss";`,
+        includePaths: [path.resolve(__dirname, "src/style")],
+      },
+    },
     {
       resolve: "gatsby-plugin-web-font-loader",
       options: {

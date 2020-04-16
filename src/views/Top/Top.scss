@@ -1,8 +1,8 @@
 // Styling for the masthead
-header.masthead {
+.masthead {
   text-align: center;
   color: white;
-  background-image: url("../img/header-bg.jpg");
+  background-image: url("./header-bg.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -27,7 +27,7 @@ header.masthead {
   }
 }
 @media (min-width: 768px) {
-  header.masthead {
+  .masthead {
     .intro-text {
       padding-top: 300px;
       padding-bottom: 200px;
