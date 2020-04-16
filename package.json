@@ -1,0 +1,78 @@
+{
+  "name": "gatsby-startbootstrap-agency",
+  "description": "gatsby version of startbootstrap-agency with i18n support",
+  "version": "0.1.0",
+  "author": "thundermiracle",
+  "bugs": {
+    "url": "https://github.com/thundermiracle/gatsby-startbootstrap-agency/issues"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.0",
+    "bootstrap": "^4.4.1",
+    "gatsby": "^2.20.22",
+    "gatsby-image": "^2.3.2",
+    "gatsby-plugin-manifest": "^2.3.3",
+    "gatsby-plugin-offline": "^3.1.2",
+    "gatsby-plugin-react-helmet": "^3.2.2",
+    "gatsby-plugin-sass": "^2.2.1",
+    "gatsby-plugin-sharp": "^2.5.4",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
+    "gatsby-source-filesystem": "^2.2.2",
+    "gatsby-transformer-sharp": "^2.4.4",
+    "node-sass": "^4.13.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-bootstrap": "^1.0.0",
+    "react-dom": "^16.13.1",
+    "react-helmet": "^5.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-import": "^1.13.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "babel-preset-gatsby": "^0.3.1",
+    "cross-env": "^7.0.2",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-config-react": "^1.1.7",
+    "eslint-import-resolver-babel-module": "^5.1.2",
+    "eslint-loader": "^4.0.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^3.0.0",
+    "gatsby-plugin-eslint": "^2.0.8",
+    "prettier": "^2.0.4"
+  },
+  "homepage": "https://thundermiracle.github.io/gatsby-startbootstrap-agency",
+  "keywords": [
+    "gatsbyjs",
+    "landing page",
+    "landing",
+    "i18n",
+    "eslint",
+    "breadcrumbs",
+    "bootstrap",
+    "startbootstrap-agency"
+  ],
+  "license": "MIT",
+  "main": "n/a",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thundermiracle/gatsby-startbootstrap-agency.git"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "build:gh": "gatsby build --prefix-paths",
+    "dev": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "yarn run dev",
+    "serve": "gatsby serve",
+    "eslint": "eslint ./src",
+    "test": "cross-env NODE_ENV=test yarn run eslint",
+    "testbuild": "yarn test && yarn build"
+  }
+}
