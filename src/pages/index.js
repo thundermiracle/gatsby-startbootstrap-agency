@@ -59,7 +59,7 @@ function IndexPage() {
         <div className="container">
           <div className="intro-text">
             <div className="intro-lead-in">Welcome To Our Studio!</div>
-            <div className="intro-heading text-uppercase">It's Nice To Meet You</div>
+            <div className="intro-heading text-uppercase">It&apos;s Nice To Meet You</div>
             <a className="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">
               Tell Me More
             </a>
@@ -415,7 +415,7 @@ function IndexPage() {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-8 text-center">
-              <h2 className="mt-0">Let's Get In Touch!</h2>
+              <h2 className="mt-0">Let&apos;s Get In Touch!</h2>
               <hr className="divider my-4" />
               <p className="text-muted mb-5">
                 Ready to start your next project with us? Give us a call or send us an email and we
