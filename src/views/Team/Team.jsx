@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Container, Row } from "react-bootstrap";
+import Icon from "components/Icon";
 import "./Team.scss";
 
 const Team = (props) => {
@@ -25,17 +26,17 @@ const Team = (props) => {
               <ul className="list-inline social-buttons">
                 <li className="list-inline-item">
                   <a href="#">
-                    <i className="fab fa-twitter" />
+                    <Icon iconName="TwitterIcon" />
                   </a>
                 </li>
                 <li className="list-inline-item">
                   <a href="#">
-                    <i className="fab fa-facebook-f" />
+                    <Icon iconName="FacebookIcon" />
                   </a>
                 </li>
                 <li className="list-inline-item">
                   <a href="#">
-                    <i className="fab fa-linkedin-in" />
+                    <Icon iconName="LinkedinIcon" />
                   </a>
                 </li>
               </ul>
@@ -49,17 +50,17 @@ const Team = (props) => {
               <ul className="list-inline social-buttons">
                 <li className="list-inline-item">
                   <a href="#">
-                    <i className="fab fa-twitter" />
+                    <Icon iconName="TwitterIcon" />
                   </a>
                 </li>
                 <li className="list-inline-item">
                   <a href="#">
-                    <i className="fab fa-facebook-f" />
+                    <Icon iconName="FacebookIcon" />
                   </a>
                 </li>
                 <li className="list-inline-item">
                   <a href="#">
-                    <i className="fab fa-linkedin-in" />
+                    <Icon iconName="LinkedinIcon" />
                   </a>
                 </li>
               </ul>
@@ -73,17 +74,17 @@ const Team = (props) => {
               <ul className="list-inline social-buttons">
                 <li className="list-inline-item">
                   <a href="#">
-                    <i className="fab fa-twitter" />
+                    <Icon iconName="TwitterIcon" />
                   </a>
                 </li>
                 <li className="list-inline-item">
                   <a href="#">
-                    <i className="fab fa-facebook-f" />
+                    <Icon iconName="FacebookIcon" />
                   </a>
                 </li>
                 <li className="list-inline-item">
                   <a href="#">
-                    <i className="fab fa-linkedin-in" />
+                    <Icon iconName="LinkedinIcon" />
                   </a>
                 </li>
               </ul>

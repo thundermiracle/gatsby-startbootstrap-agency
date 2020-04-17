@@ -7,7 +7,10 @@
     "url": "https://github.com/thundermiracle/gatsby-startbootstrap-agency/issues"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.13.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@fortawesome/free-brands-svg-icons": "^5.13.0",
+    "@fortawesome/react-fontawesome": "^0.1.9",
     "bootstrap": "^4.4.1",
     "gatsby": "^2.20.22",
     "gatsby-image": "^2.3.2",
@@ -31,6 +34,7 @@
     "babel-eslint": "^10.1.0",
     "babel-plugin-import": "^1.13.0",
     "babel-plugin-module-resolver": "^4.0.0",
+    "babel-plugin-transform-import": "^1.5.4",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "babel-preset-gatsby": "^0.3.1",
     "cross-env": "^7.0.2",

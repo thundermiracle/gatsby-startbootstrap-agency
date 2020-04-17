@@ -2,6 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Container, Row } from "react-bootstrap";
+
+import { faShoppingCart, faLaptop, faLock } from "@fortawesome/free-solid-svg-icons";
+
+import CircleFAButton from "components/CircleFAButton";
 import "./Services.scss";
 
 const Services = (props) => {
@@ -18,10 +22,7 @@ const Services = (props) => {
         </Row>
         <Row className="text-center">
           <div className="col-md-4">
-            <span className="fa-stack fa-4x">
-              <i className="fas fa-circle fa-stack-2x text-primary" />
-              <i className="fas fa-shopping-cart fa-stack-1x fa-inverse" />
-            </span>
+            <CircleFAButton iconName="ShoppingCartIcon" />
             <h4 className="service-heading">E-Commerce</h4>
             <p className="text-muted">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam
@@ -29,10 +30,7 @@ const Services = (props) => {
             </p>
           </div>
           <div className="col-md-4">
-            <span className="fa-stack fa-4x">
-              <i className="fas fa-circle fa-stack-2x text-primary" />
-              <i className="fas fa-laptop fa-stack-1x fa-inverse" />
-            </span>
+            <CircleFAButton iconName="LaptopIcon" />
             <h4 className="service-heading">Responsive Design</h4>
             <p className="text-muted">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam
@@ -40,10 +38,7 @@ const Services = (props) => {
             </p>
           </div>
           <div className="col-md-4">
-            <span className="fa-stack fa-4x">
-              <i className="fas fa-circle fa-stack-2x text-primary" />
-              <i className="fas fa-lock fa-stack-1x fa-inverse" />
-            </span>
+            <CircleFAButton iconName="LockIcon" />
             <h4 className="service-heading">Web Security</h4>
             <p className="text-muted">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam

@@ -10,7 +10,7 @@ const Top = (props) => {
       <Container>
         <div className="intro-text">
           <div className="intro-lead-in">Welcome To Our Studio!</div>
-          <div className="intro-heading text-uppercase">It's Nice To Meet You</div>
+          <div className="intro-heading text-uppercase">It&apos;s Nice To Meet You</div>
           <Button
             size="xl"
             variant="primary"

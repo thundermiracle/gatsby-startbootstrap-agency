@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Container, Row } from "react-bootstrap";
+import Icon from "components/Icon";
 import "./Portfolio.scss";
 
 const Portfolio = (props) => {
@@ -21,7 +22,7 @@ const Portfolio = (props) => {
             <a className="portfolio-link" data-toggle="modal" href="#portfolioModal1">
               <div className="portfolio-hover">
                 <div className="portfolio-hover-content">
-                  <i className="fas fa-plus fa-3x" />
+                  <Icon iconName="PlusIcon" />
                 </div>
               </div>
               <img className="img-fluid" src="img/portfolio/01-thumbnail.jpg" alt="" />
@@ -35,7 +36,7 @@ const Portfolio = (props) => {
             <a className="portfolio-link" data-toggle="modal" href="#portfolioModal2">
               <div className="portfolio-hover">
                 <div className="portfolio-hover-content">
-                  <i className="fas fa-plus fa-3x" />
+                  <Icon iconName="PlusIcon" />
                 </div>
               </div>
               <img className="img-fluid" src="img/portfolio/02-thumbnail.jpg" alt="" />
@@ -49,7 +50,7 @@ const Portfolio = (props) => {
             <a className="portfolio-link" data-toggle="modal" href="#portfolioModal3">
               <div className="portfolio-hover">
                 <div className="portfolio-hover-content">
-                  <i className="fas fa-plus fa-3x" />
+                  <Icon iconName="PlusIcon" />
                 </div>
               </div>
               <img className="img-fluid" src="img/portfolio/03-thumbnail.jpg" alt="" />
@@ -63,7 +64,7 @@ const Portfolio = (props) => {
             <a className="portfolio-link" data-toggle="modal" href="#portfolioModal4">
               <div className="portfolio-hover">
                 <div className="portfolio-hover-content">
-                  <i className="fas fa-plus fa-3x" />
+                  <Icon iconName="PlusIcon" />
                 </div>
               </div>
               <img className="img-fluid" src="img/portfolio/04-thumbnail.jpg" alt="" />
@@ -77,7 +78,7 @@ const Portfolio = (props) => {
             <a className="portfolio-link" data-toggle="modal" href="#portfolioModal5">
               <div className="portfolio-hover">
                 <div className="portfolio-hover-content">
-                  <i className="fas fa-plus fa-3x" />
+                  <Icon iconName="PlusIcon" />
                 </div>
               </div>
               <img className="img-fluid" src="img/portfolio/05-thumbnail.jpg" alt="" />
@@ -91,7 +92,7 @@ const Portfolio = (props) => {
             <a className="portfolio-link" data-toggle="modal" href="#portfolioModal6">
               <div className="portfolio-hover">
                 <div className="portfolio-hover-content">
-                  <i className="fas fa-plus fa-3x" />
+                  <Icon iconName="PlusIcon" />
                 </div>
               </div>
               <img className="img-fluid" src="img/portfolio/06-thumbnail.jpg" alt="" />

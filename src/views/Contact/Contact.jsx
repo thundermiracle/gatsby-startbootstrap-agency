@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 import { Container, Row } from "react-bootstrap";
+import Icon from "components/Icon";
 
 const Contact = (props) => {
   return (
@@ -17,14 +19,14 @@ const Contact = (props) => {
           </div>
         </Row>
         <Row>
-          <div className="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
-            <i className="fas fa-phone fa-3x mb-3 text-muted" />
+          <div className="col-lg-4 ml-auto text-center">
+            <Icon iconName="PhoneIcon" size="3x" className="text-muted mb-3" />
             <a className="d-block" href="tel:0489150520">
               048-915-0520
             </a>
           </div>
           <div className="col-lg-4 mr-auto text-center">
-            <i className="fas fa-envelope fa-3x mb-3 text-muted" />
+            <Icon iconName="EnvelopIcon" size="3x" className="text-muted mb-3" />
             <a className="d-block" href="mailto:contact@yourwebsite.com">
               contact@yourwebsite.com
             </a>

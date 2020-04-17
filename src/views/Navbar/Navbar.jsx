@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Navbar, Container, NavbarBrand, Nav } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 import "./Navbar.scss";
 
@@ -17,8 +19,8 @@ const MyNavbar = (props) => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          Menu
-          <i className="fas fa-bars" />
+          Menu&nbsp;
+          <FontAwesomeIcon icon={faBars} />
         </Navbar.Toggle>
         <Navbar.Collapse id="navbarResponsive">
           <Nav className="text-uppercase ml-auto">
