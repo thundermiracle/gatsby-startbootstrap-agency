@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Container, Row } from "react-bootstrap";
+import Image from "components/Image";
 import "./Timeline.scss";
 
 const Timeline = (props) => {
@@ -21,7 +22,7 @@ const Timeline = (props) => {
             <ul className="timeline">
               <li>
                 <div className="timeline-image">
-                  <img className="rounded-circle img-fluid" src="img/about/1.jpg" alt="" />
+                  <Image className="rounded-circle img-fluid" fileName="about/1.jpg" alt="" />
                 </div>
                 <div className="timeline-panel">
                   <div className="timeline-heading">
@@ -39,7 +40,7 @@ const Timeline = (props) => {
               </li>
               <li className="timeline-inverted">
                 <div className="timeline-image">
-                  <img className="rounded-circle img-fluid" src="img/about/2.jpg" alt="" />
+                  <Image className="rounded-circle img-fluid" fileName="about/2.jpg" alt="" />
                 </div>
                 <div className="timeline-panel">
                   <div className="timeline-heading">
@@ -57,7 +58,7 @@ const Timeline = (props) => {
               </li>
               <li>
                 <div className="timeline-image">
-                  <img className="rounded-circle img-fluid" src="img/about/3.jpg" alt="" />
+                  <Image className="rounded-circle img-fluid" fileName="about/3.jpg" alt="" />
                 </div>
                 <div className="timeline-panel">
                   <div className="timeline-heading">
@@ -75,7 +76,7 @@ const Timeline = (props) => {
               </li>
               <li className="timeline-inverted">
                 <div className="timeline-image">
-                  <img className="rounded-circle img-fluid" src="img/about/4.jpg" alt="" />
+                  <Image className="rounded-circle img-fluid" fileName="about/4.jpg" alt="" />
                 </div>
                 <div className="timeline-panel">
                   <div className="timeline-heading">

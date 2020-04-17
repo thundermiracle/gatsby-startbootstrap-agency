@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import { Container, Row } from "react-bootstrap";
 import Icon from "components/Icon";
+import Image from "components/Image";
 import "./Portfolio.scss";
 
 const Portfolio = (props) => {
@@ -25,7 +26,7 @@ const Portfolio = (props) => {
                   <Icon iconName="PlusIcon" />
                 </div>
               </div>
-              <img className="img-fluid" src="img/portfolio/01-thumbnail.jpg" alt="" />
+              <Image className="img-fluid" fileName="portfolio/01-thumbnail.jpg" alt="" />
             </a>
             <div className="portfolio-caption">
               <h4>Threads</h4>
@@ -39,7 +40,7 @@ const Portfolio = (props) => {
                   <Icon iconName="PlusIcon" />
                 </div>
               </div>
-              <img className="img-fluid" src="img/portfolio/02-thumbnail.jpg" alt="" />
+              <Image className="img-fluid" fileName="portfolio/02-thumbnail.jpg" alt="" />
             </a>
             <div className="portfolio-caption">
               <h4>Explore</h4>
@@ -53,7 +54,7 @@ const Portfolio = (props) => {
                   <Icon iconName="PlusIcon" />
                 </div>
               </div>
-              <img className="img-fluid" src="img/portfolio/03-thumbnail.jpg" alt="" />
+              <Image className="img-fluid" fileName="portfolio/03-thumbnail.jpg" alt="" />
             </a>
             <div className="portfolio-caption">
               <h4>Finish</h4>
@@ -67,7 +68,7 @@ const Portfolio = (props) => {
                   <Icon iconName="PlusIcon" />
                 </div>
               </div>
-              <img className="img-fluid" src="img/portfolio/04-thumbnail.jpg" alt="" />
+              <Image className="img-fluid" fileName="portfolio/04-thumbnail.jpg" alt="" />
             </a>
             <div className="portfolio-caption">
               <h4>Lines</h4>
@@ -81,7 +82,7 @@ const Portfolio = (props) => {
                   <Icon iconName="PlusIcon" />
                 </div>
               </div>
-              <img className="img-fluid" src="img/portfolio/05-thumbnail.jpg" alt="" />
+              <Image className="img-fluid" fileName="portfolio/05-thumbnail.jpg" alt="" />
             </a>
             <div className="portfolio-caption">
               <h4>Southwest</h4>
@@ -95,7 +96,7 @@ const Portfolio = (props) => {
                   <Icon iconName="PlusIcon" />
                 </div>
               </div>
-              <img className="img-fluid" src="img/portfolio/06-thumbnail.jpg" alt="" />
+              <Image className="img-fluid" fileName="portfolio/06-thumbnail.jpg" alt="" />
             </a>
             <div className="portfolio-caption">
               <h4>Window</h4>

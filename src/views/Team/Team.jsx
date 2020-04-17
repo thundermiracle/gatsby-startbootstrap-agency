@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import { Container, Row } from "react-bootstrap";
 import Icon from "components/Icon";
+import Image from "components/Image";
 import "./Team.scss";
 
 const Team = (props) => {
@@ -20,7 +21,7 @@ const Team = (props) => {
         <Row>
           <div className="col-sm-4">
             <div className="team-member">
-              <img className="mx-auto rounded-circle" src="img/team/1.jpg" alt="" />
+              <Image className="mx-auto circle rounded-circle" fileName="team/1.jpg" alt="" />
               <h4>Kay Garland</h4>
               <p className="text-muted">Lead Designer</p>
               <ul className="list-inline social-buttons">
@@ -44,7 +45,7 @@ const Team = (props) => {
           </div>
           <div className="col-sm-4">
             <div className="team-member">
-              <img className="mx-auto rounded-circle" src="img/team/2.jpg" alt="" />
+              <Image className="mx-auto circle rounded-circle" fileName="team/2.jpg" alt="" />
               <h4>Larry Parker</h4>
               <p className="text-muted">Lead Marketer</p>
               <ul className="list-inline social-buttons">
@@ -68,7 +69,7 @@ const Team = (props) => {
           </div>
           <div className="col-sm-4">
             <div className="team-member">
-              <img className="mx-auto rounded-circle" src="img/team/3.jpg" alt="" />
+              <Image className="mx-auto circle rounded-circle" fileName="team/3.jpg" alt="" />
               <h4>Diana Pertersen</h4>
               <p className="text-muted">Lead Developer</p>
               <ul className="list-inline social-buttons">

@@ -2,24 +2,32 @@ const path = require("path");
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsyby startbootstrap-agency`,
-    description: `gatsby version of startbootstrap-agency with i18n support.`,
-    author: `thundermiracle`,
+    title: "Gatsyby startbootstrap-agency",
+    description: "gatsby version of startbootstrap-agency with i18n support.",
+    author: "thundermiracle",
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    "gatsby-plugin-eslint",
+    "gatsby-plugin-react-helmet",
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `images`,
+        path: `${__dirname}/content/assets/images`,
+      },
+    },
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        name: `Gatsby Startbootstrap Agency`,
+        short_name: `Agency`,
         start_url: `/`,
-        background_color: `#663399`,
+        background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/img/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `content/assets/gatsby-icon.png`,
       },
     },
     {
