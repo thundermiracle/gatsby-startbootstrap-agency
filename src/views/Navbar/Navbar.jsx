@@ -2,16 +2,39 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Navbar, Container, NavbarBrand, Nav } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-scroll";
+
+import useWindowOnScroll from "hooks/useWindowOnScroll";
+import Icon from "components/Icon";
 
 import "./Navbar.scss";
+import useSmoothScrollTo from "hooks/useSmoothScrollTo";
 
 const MyNavbar = (props) => {
+  const [shrink, setShrink] = React.useState(false);
+  const handleScrollToTop = useSmoothScrollTo(0);
+
+  const handleWindowScroll = React.useCallback(() => {
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    setShrink(scrollTop > 100);
+  }, []);
+
+  React.useEffect(() => {
+    handleWindowScroll();
+  }, [handleWindowScroll]);
+
+  useWindowOnScroll(handleWindowScroll);
+
   return (
-    <Navbar collapseOnSelect expand="lg" fixed="top" id="mainNav">
+    <Navbar
+      className={shrink ? "navbar-shrink" : ""}
+      collapseOnSelect
+      expand="lg"
+      fixed="top"
+      id="mainNav"
+    >
       <Container>
-        <NavbarBrand className="js-scroll-trigger" href="#page-top">
+        <NavbarBrand className="cursor-pointer" onClick={handleScrollToTop}>
           Start Bootstrap
         </NavbarBrand>
         <Navbar.Toggle
@@ -20,34 +43,64 @@ const MyNavbar = (props) => {
           aria-label="Toggle navigation"
         >
           Menu&nbsp;
-          <FontAwesomeIcon icon={faBars} />
+          <Icon iconName="BarsIcon" />
         </Navbar.Toggle>
         <Navbar.Collapse id="navbarResponsive">
           <Nav className="text-uppercase ml-auto">
             <Nav.Item>
-              <Nav.Link className="js-scroll-trigger" href="#services">
+              <Link
+                className="nav-link cursor-pointer"
+                activeClass="active"
+                to="services"
+                spy
+                smooth="easeInOutQuart"
+              >
                 services
-              </Nav.Link>
+              </Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link className="js-scroll-trigger" href="#portfolio">
+              <Link
+                className="nav-link cursor-pointer"
+                activeClass="active"
+                to="portfolio"
+                spy
+                smooth="easeInOutQuart"
+              >
                 portfolio
-              </Nav.Link>
+              </Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link className="js-scroll-trigger" href="#about">
+              <Link
+                className="nav-link cursor-pointer"
+                activeClass="active"
+                to="about"
+                spy
+                smooth="easeInOutQuart"
+              >
                 about
-              </Nav.Link>
+              </Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link className="js-scroll-trigger" href="#team">
+              <Link
+                className="nav-link cursor-pointer"
+                activeClass="active"
+                to="team"
+                spy
+                smooth="easeInOutQuart"
+              >
                 team
-              </Nav.Link>
+              </Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link className="js-scroll-trigger" href="#contact">
+              <Link
+                className="nav-link cursor-pointer"
+                activeClass="active"
+                to="contact"
+                spy
+                smooth="easeInOutQuart"
+              >
                 contact
-              </Nav.Link>
+              </Link>
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>

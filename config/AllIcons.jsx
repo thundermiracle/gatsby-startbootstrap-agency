@@ -8,6 +8,7 @@ import {
   faPhone,
   faEnvelope,
   faPlus,
+  faBars,
 } from "@fortawesome/free-solid-svg-icons";
 import { faTwitter, faFacebookF, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 
@@ -22,6 +23,7 @@ export const LockIcon = makeFAIcon(faLock);
 export const PhoneIcon = makeFAIcon(faPhone);
 export const EnvelopIcon = makeFAIcon(faEnvelope);
 export const PlusIcon = makeFAIcon(faPlus);
+export const BarsIcon = makeFAIcon(faBars);
 
 export const TwitterIcon = makeFAIcon(faTwitter);
 export const FacebookIcon = makeFAIcon(faFacebookF);

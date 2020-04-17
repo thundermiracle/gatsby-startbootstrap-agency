@@ -27,7 +27,9 @@
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.0",
     "react-dom": "^16.13.1",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "react-scroll": "^1.7.16",
+    "throttle-debounce": "^2.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
