@@ -37,18 +37,18 @@ module.exports = {
         includePaths: [path.resolve(__dirname, "src/style")],
       },
     },
-    // {
-    //   resolve: "gatsby-plugin-web-font-loader",
-    //   options: {
-    //     google: {
-    //       families: [
-    //         "Montserrat:400,700",
-    //         "Kaushan+Script",
-    //         "Droid+Serif:400,700,400italic,700italic",
-    //         "Roboto+Slab:400,100,300,700",
-    //       ],
-    //     },
-    //   },
-    // },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        google: {
+          families: [
+            "Montserrat:400,700",
+            "Kaushan+Script",
+            "Droid+Serif:400,700,400italic,700italic",
+            "Roboto+Slab:400,100,300,700",
+          ],
+        },
+      },
+    },
   ],
 };
