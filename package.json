@@ -55,12 +55,12 @@
   },
   "homepage": "https://thundermiracle.github.io/gatsby-startbootstrap-agency",
   "keywords": [
+    "gatsby",
     "gatsbyjs",
     "landing page",
     "landing",
     "i18n",
     "eslint",
-    "breadcrumbs",
     "bootstrap",
     "startbootstrap-agency"
   ],
@@ -72,10 +72,8 @@
   },
   "scripts": {
     "build": "gatsby build",
-    "build:gh": "gatsby build --prefix-paths",
     "dev": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "yarn run dev",
     "serve": "gatsby serve",
     "eslint": "eslint ./src",
     "test": "cross-env NODE_ENV=test yarn run eslint",

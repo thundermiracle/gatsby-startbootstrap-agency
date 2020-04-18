@@ -35,6 +35,11 @@ function HTML({
           rel="stylesheet"
           type="text/css"
         />
+        <link
+          href="https://use.fontawesome.com/releases/v5.12.1/css/svg-with-js.css"
+          rel="stylesheet"
+          type="text/css"
+        />
         {headComponents}
       </head>
       <body {...bodyAttributes} className="light">
