@@ -1,0 +1,38 @@
+// Styling for the timeline section
+.timeline {
+  position: relative;
+  padding: 0;
+  list-style: none;
+  &:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 40px;
+    width: 2px;
+    margin-left: -1.5px;
+    content: "";
+    background-color: $gray-200;
+  }
+  .timeline-heading {
+    h4 {
+      margin-top: 0;
+      color: inherit;
+      &.subheading {
+        text-transform: none;
+      }
+    }
+  }
+  .timeline-body {
+    > ul,
+    > p {
+      margin-bottom: 0;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .timeline {
+    &:before {
+      left: 50%;
+    }
+  }
+}

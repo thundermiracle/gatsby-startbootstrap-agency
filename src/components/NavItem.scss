@@ -1,0 +1,17 @@
+.nav-link {
+  font-size: 90%;
+  font-weight: 400;
+  padding: 0.75em 0;
+  letter-spacing: 1px;
+  color: white !important;
+  @include heading-font;
+  &.active,
+  &:hover {
+    color: $primary !important;
+  }
+}
+@media (min-width: 992px) {
+  .nav-link {
+    padding: 1.1em 1em !important;
+  }
+}

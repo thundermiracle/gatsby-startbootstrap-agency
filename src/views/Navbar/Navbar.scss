@@ -21,22 +21,6 @@
       color: darken($primary, 10%);
     }
   }
-  .navbar-nav {
-    .nav-item {
-      .nav-link {
-        font-size: 90%;
-        font-weight: 400;
-        padding: 0.75em 0;
-        letter-spacing: 1px;
-        color: white;
-        @include heading-font;
-        &.active,
-        &:hover {
-          color: $primary;
-        }
-      }
-    }
-  }
 }
 @media (min-width: 992px) {
   #mainNav {
@@ -52,13 +36,6 @@
       -webkit-transition: all 0.3s;
       -moz-transition: all 0.3s;
       transition: all 0.3s;
-    }
-    .navbar-nav {
-      .nav-item {
-        .nav-link {
-          padding: 1.1em 1em !important;
-        }
-      }
     }
     &.navbar-shrink {
       padding-top: 0;

@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 import { Nav } from "react-bootstrap";
 import { Link } from "react-scroll";
 
+import "./NavItem.scss";
+
 const NavItem = ({ to, onClick, children }) => {
   return (
     <Nav.Item>
