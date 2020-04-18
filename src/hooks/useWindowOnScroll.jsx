@@ -1,16 +1,14 @@
 import React from "react";
 import { throttle } from "throttle-debounce";
 
-const noop = () => {};
-
-const useWindowOnScroll = (handleScroll) => {
+const useWindowOnScroll = (handleWindowScroll, loadOnceOnMount = true) => {
   const internalHandleScroll = React.useMemo(() => {
     // 166 -> 60HZ
-    return handleScroll ? throttle(166, handleScroll) : noop;
-  }, [handleScroll]);
+    return handleWindowScroll ? throttle(166, handleWindowScroll) : handleWindowScroll;
+  }, [handleWindowScroll]);
 
   React.useEffect(() => {
-    if (internalHandleScroll === noop) {
+    if (internalHandleScroll == null) {
       return undefined;
     }
 
@@ -20,6 +18,13 @@ const useWindowOnScroll = (handleScroll) => {
       internalHandleScroll.cancel();
     };
   }, [internalHandleScroll]);
+
+  React.useEffect(() => {
+    if (loadOnceOnMount) {
+      handleWindowScroll();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 };
 
 export default useWindowOnScroll;
