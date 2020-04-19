@@ -1,13 +1,12 @@
 import React from "react";
-import PropTypes from "prop-types";
 
-import TimelineElement from "components/TimelineElement";
+import TimelineItem from "components/TimelineItem";
 import "./Timeline.scss";
 
-const Timeline = (props) => {
+const Timeline = () => {
   return (
     <ul className="timeline">
-      <TimelineElement
+      <TimelineItem
         imageFileName="about/1.jpg"
         header="2009-2011"
         subheader="Our Humble Beginnings"
@@ -15,7 +14,7 @@ const Timeline = (props) => {
                       eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero
                       unde, sed, incidunt et ea quo dolore laudantium consectetur!"
       />
-      <TimelineElement
+      <TimelineItem
         invert
         imageFileName="about/2.jpg"
         header="March 2011"
@@ -24,7 +23,7 @@ const Timeline = (props) => {
                       eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero
                       unde, sed, incidunt et ea quo dolore laudantium consectetur!"
       />
-      <TimelineElement
+      <TimelineItem
         imageFileName="about/3.jpg"
         header="December 2012"
         subheader="Transition to Full Service"
@@ -32,7 +31,7 @@ const Timeline = (props) => {
                       eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero
                       unde, sed, incidunt et ea quo dolore laudantium consectetur!"
       />
-      <TimelineElement
+      <TimelineItem
         invert
         imageFileName="about/4.jpg"
         header="July 2014"
@@ -41,7 +40,7 @@ const Timeline = (props) => {
                       eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero
                       unde, sed, incidunt et ea quo dolore laudantium consectetur!"
       />
-      <TimelineElement
+      <TimelineItem
         imageContent={
           <h4>
             Be Part
@@ -55,7 +54,5 @@ const Timeline = (props) => {
     </ul>
   );
 };
-
-Timeline.propTypes = {};
 
 export default Timeline;

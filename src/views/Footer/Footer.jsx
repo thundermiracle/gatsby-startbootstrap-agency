@@ -1,8 +1,7 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Container } from "react-bootstrap";
 
-const Footer = (props) => {
+const Footer = () => {
   return (
     <footer className="bg-light py-5">
       <Container>
@@ -11,7 +10,5 @@ const Footer = (props) => {
     </footer>
   );
 };
-
-Footer.propTypes = {};
 
 export default Footer;

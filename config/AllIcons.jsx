@@ -10,7 +10,13 @@ import {
   faPlus,
   faBars,
 } from "@fortawesome/free-solid-svg-icons";
-import { faTwitter, faFacebookF, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import {
+  faTwitter,
+  faFacebookF,
+  faLinkedinIn,
+  faGithubAlt,
+  faMediumM,
+} from "@fortawesome/free-brands-svg-icons";
 
 function makeFAIcon(icon) {
   // eslint-disable-next-line react/display-name
@@ -24,6 +30,8 @@ export const PhoneIcon = makeFAIcon(faPhone);
 export const EnvelopIcon = makeFAIcon(faEnvelope);
 export const PlusIcon = makeFAIcon(faPlus);
 export const BarsIcon = makeFAIcon(faBars);
+export const GithubIcon = makeFAIcon(faGithubAlt);
+export const MediumIcon = makeFAIcon(faMediumM);
 
 export const TwitterIcon = makeFAIcon(faTwitter);
 export const FacebookIcon = makeFAIcon(faFacebookF);

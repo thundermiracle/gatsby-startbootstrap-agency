@@ -1,8 +1,6 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import { Navbar, Container, Nav } from "react-bootstrap";
-import { Link } from "react-scroll";
 
 import useWindowOnScroll from "hooks/useWindowOnScroll";
 import useSmoothScrollTo from "hooks/useSmoothScrollTo";
@@ -11,7 +9,7 @@ import NavItem from "components/NavItem";
 
 import "./Navbar.scss";
 
-const MyNavbar = (props) => {
+const MyNavbar = () => {
   const handleScrollToTop = useSmoothScrollTo(0);
 
   const [expanded, setExpanded] = React.useState(false);
@@ -62,7 +60,5 @@ const MyNavbar = (props) => {
     </Navbar>
   );
 };
-
-MyNavbar.propTypes = {};
 
 export default MyNavbar;

@@ -1,11 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import { Container, Button } from "react-bootstrap";
 import useSmoothScrollTo from "hooks/useSmoothScrollTo";
 import "./Top.scss";
 
-const Top = (props) => {
+const Top = () => {
   const scrollToServices = useSmoothScrollTo("services");
 
   return (
@@ -22,7 +21,5 @@ const Top = (props) => {
     </div>
   );
 };
-
-Top.propTypes = {};
 
 export default Top;

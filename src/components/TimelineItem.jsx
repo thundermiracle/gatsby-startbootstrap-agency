@@ -4,9 +4,9 @@ import clsx from "clsx";
 
 import Image from "components/Image";
 
-import "./TimelineElement.scss";
+import "./TimelineItem.scss";
 
-const TimelineElement = ({
+const TimelineItem = ({
   invert,
   imageFileName,
   imageAlt,
@@ -18,7 +18,7 @@ const TimelineElement = ({
   const headerPart = header ? <h4>{header}</h4> : null;
   const subheaderPart = subheader ? <h4 className="subheading">{subheader}</h4> : null;
 
-  const liClassName = clsx("timeline-element", { "timeline-inverted": invert });
+  const liClassName = clsx("timeline-item", { "timeline-inverted": invert });
 
   return (
     <li className={liClassName}>
@@ -44,7 +44,7 @@ const TimelineElement = ({
   );
 };
 
-TimelineElement.propTypes = {
+TimelineItem.propTypes = {
   invert: PropTypes.bool,
   imageFileName: PropTypes.string,
   imageAlt: PropTypes.string,
@@ -54,7 +54,7 @@ TimelineElement.propTypes = {
   content: PropTypes.string,
 };
 
-TimelineElement.defaultProps = {
+TimelineItem.defaultProps = {
   invert: false,
   imageFileName: "",
   imageAlt: "",
@@ -64,4 +64,4 @@ TimelineElement.defaultProps = {
   content: "",
 };
 
-export default TimelineElement;
+export default TimelineItem;

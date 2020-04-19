@@ -1,4 +1,4 @@
-.timeline-element {
+.timeline-item {
   position: relative;
   min-height: 50px;
   margin-bottom: 50px;
@@ -84,7 +84,7 @@
   }
 }
 @media (min-width: 768px) {
-  .timeline-element {
+  .timeline-item {
     min-height: 100px;
     margin-bottom: 100px;
     .timeline-panel {
@@ -112,7 +112,7 @@
   }
 }
 @media (min-width: 992px) {
-  .timeline-element {
+  .timeline-item {
     min-height: 150px;
     .timeline-panel {
       padding: 0 20px 20px;
@@ -133,7 +133,7 @@
   }
 }
 @media (min-width: 1200px) {
-  .timeline-element {
+  .timeline-item {
     min-height: 170px;
     .timeline-panel {
       padding: 0 20px 20px 100px;
