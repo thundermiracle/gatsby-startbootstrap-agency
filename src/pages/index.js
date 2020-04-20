@@ -1,5 +1,4 @@
 import React from "react";
-import { graphql } from "gatsby";
 
 import Navbar from "views/Navbar";
 import Top from "views/Top";
