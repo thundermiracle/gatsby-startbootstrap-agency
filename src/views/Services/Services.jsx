@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 
 import ServiceItem from "components/ServiceItem";
 import SectionHeader from "components/SectionHeader";
