@@ -9,6 +9,7 @@ import {
   faEnvelope,
   faPlus,
   faBars,
+  faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faTwitter,
@@ -32,6 +33,7 @@ export const PlusIcon = makeFAIcon(faPlus);
 export const BarsIcon = makeFAIcon(faBars);
 export const GithubIcon = makeFAIcon(faGithubAlt);
 export const MediumIcon = makeFAIcon(faMediumM);
+export const CloseIcon = makeFAIcon(faTimes);
 
 export const TwitterIcon = makeFAIcon(faTwitter);
 export const FacebookIcon = makeFAIcon(faFacebookF);
