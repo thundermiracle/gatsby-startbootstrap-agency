@@ -13,21 +13,6 @@
     content: "";
     background-color: $gray-200;
   }
-  .timeline-heading {
-    h4 {
-      margin-top: 0;
-      color: inherit;
-      &.subheading {
-        text-transform: none;
-      }
-    }
-  }
-  .timeline-body {
-    > ul,
-    > p {
-      margin-bottom: 0;
-    }
-  }
 }
 @media (min-width: 768px) {
   .timeline {
