@@ -1,12 +1,11 @@
-// Styling for the masthead
-.masthead {
-  text-align: center;
-  color: white;
-  background-image: url("./header-bg.jpg");
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center center;
-  background-size: cover;
+.image-card {
+  height: 491px;
+  .image {
+    height: 491px;
+  }
+  .no-padding {
+    padding: 0;
+  }
   .intro-text {
     padding-top: 150px;
     padding-bottom: 100px;
@@ -27,7 +26,11 @@
   }
 }
 @media (min-width: 768px) {
-  .masthead {
+  .image-card {
+    height: 759px;
+    .image {
+      height: 759px;
+    }
     .intro-text {
       padding-top: 300px;
       padding-bottom: 200px;

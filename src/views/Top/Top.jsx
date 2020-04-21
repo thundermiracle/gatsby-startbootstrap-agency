@@ -1,24 +1,24 @@
 import React from "react";
 
-import { Container, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import useSmoothScrollTo from "hooks/useSmoothScrollTo";
-import "./Top.scss";
+import ImageCard from "components/ImageCard";
 
 const Top = () => {
   const scrollToServices = useSmoothScrollTo("services");
 
   return (
-    <div className="masthead">
-      <Container>
-        <div className="intro-text">
-          <div className="intro-lead-in">Welcome To Our Studio!</div>
-          <div className="intro-heading text-uppercase">It&apos;s Nice To Meet You</div>
-          <Button size="xl" variant="primary" className="text-uppercase" onClick={scrollToServices}>
-            Tell Me More
-          </Button>
-        </div>
-      </Container>
-    </div>
+    <ImageCard
+      imageFileName="header-bg.jpg"
+      imageAlt="header-bg"
+      header="It's Nice To Meet You"
+      subheader="Welcome To Our Studio!"
+      extraInfo={
+        <Button size="xl" variant="primary" className="text-uppercase" onClick={scrollToServices}>
+          Tell Me More
+        </Button>
+      }
+    />
   );
 };
 

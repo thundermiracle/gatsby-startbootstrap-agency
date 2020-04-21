@@ -14,7 +14,7 @@ const Image = ({ fileName, alt, ...restProps }) => (
               relativePath
               name
               childImageSharp {
-                sizes(maxWidth: 800) {
+                sizes(maxWidth: 1920) {
                   ...GatsbyImageSharpSizes
                 }
               }
