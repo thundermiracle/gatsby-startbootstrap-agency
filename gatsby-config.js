@@ -7,28 +7,36 @@ module.exports = {
     author: "thundermiracle",
   },
   plugins: [
-    "gatsby-plugin-eslint",
-    "gatsby-plugin-react-helmet",
+    "gatsby-transformer-remark",
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `images`,
+        name: "markdown",
+        path: `${__dirname}/content`,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
         path: `${__dirname}/content/assets/images`,
       },
     },
+    "gatsby-plugin-eslint",
+    "gatsby-plugin-react-helmet",
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     "gatsby-plugin-offline",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: `Gatsby Startbootstrap Agency`,
-        short_name: `Agency`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        name: "Gatsby Startbootstrap Agency",
+        short_name: "Agency",
+        start_url: "/",
+        background_color: "#ffffff",
+        theme_color: "#663399",
+        display: "minimal-ui",
+        icon: "content/assets/gatsby-icon.png",
       },
     },
     {

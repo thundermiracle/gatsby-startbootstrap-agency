@@ -27,7 +27,7 @@ module.exports = {
       "tree-shaking-react-bootstrap",
     ],
     [
-      "transform-import",
+      "transform-imports",
       {
         "@fortawesome/free-solid-svg-icons": {
           transform: "@fortawesome/free-solid-svg-icons/${member}",
@@ -36,6 +36,10 @@ module.exports = {
         "@fortawesome/free-brands-svg-icons": {
           transform: "@fortawesome/free-brands-svg-icons/${member}",
           skipDefaultConversion: true,
+        },
+        ramda: {
+          transform: "ramda/src/${member}",
+          preventFullImport: true,
         },
       },
     ],
