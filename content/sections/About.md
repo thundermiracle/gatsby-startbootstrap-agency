@@ -27,7 +27,7 @@ timeline: [
     content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
   },
   {
-    imageContent: "<h4>Be Part<br />Of Our<br />Story!</h4>"
+    imageContent: "Be Part\r\nOf Our\r\nStory!"
   }
 ]
 ---
