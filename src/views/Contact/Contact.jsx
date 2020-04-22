@@ -11,6 +11,7 @@ const Contact = () => (
       query ContactQuery {
         markdownRemark(fileAbsolutePath: { regex: "/contact/i" }) {
           frontmatter {
+            anchor
             header
             subheader
             telephone
@@ -26,10 +27,10 @@ const Contact = () => (
         return null;
       }
 
-      const { header, subheader, telephone, email } = frontmatter;
+      const { anchor, header, subheader, telephone, email } = frontmatter;
 
       return (
-        <PageSection id="contact">
+        <PageSection id={anchor}>
           <Row className="justify-content-center">
             <Col lg={8} className="text-center">
               <h2 className="mt-0">{header}</h2>

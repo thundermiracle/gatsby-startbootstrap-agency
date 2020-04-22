@@ -1,4 +1,6 @@
 import React from "react";
+import clsx from "clsx";
+import { useStaticQuery, graphql } from "gatsby";
 
 import { Navbar, Container, Nav } from "react-bootstrap";
 
@@ -10,6 +12,30 @@ import NavItem from "components/NavItem";
 import "./Navbar.scss";
 
 const MyNavbar = () => {
+  const {
+    allMarkdownRemark: { nodes },
+    markdownRemark = { frontmatter: {} },
+  } = useStaticQuery(graphql`
+    query NavBarQuery {
+      allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/sections/i" } }
+        sort: { fields: fileAbsolutePath }
+      ) {
+        nodes {
+          frontmatter {
+            anchor
+          }
+        }
+      }
+      markdownRemark(fileAbsolutePath: { regex: "/navbar/i" }) {
+        frontmatter {
+          brand
+          menuText
+        }
+      }
+    }
+  `);
+
   const handleScrollToTop = useSmoothScrollTo(0);
 
   const [expanded, setExpanded] = React.useState(false);
@@ -33,27 +59,24 @@ const MyNavbar = () => {
 
   return (
     <Navbar
-      className={shrink ? "navbar-shrink" : ""}
+      className={clsx("navbar-root", { "navbar-shrink": shrink })}
       expand="lg"
       fixed="top"
-      id="mainNav"
       expanded={expanded}
     >
       <Container>
         <Navbar.Brand className="cursor-pointer" onClick={handleBrandClick}>
-          Start Bootstrap
+          {markdownRemark.frontmatter.brand}
         </Navbar.Brand>
         <Navbar.Toggle onClick={toggleMenu} aria-label="Toggle navigation">
-          Menu&nbsp;
+          {markdownRemark.frontmatter.menuText}
           <Icon iconName="BarsIcon" />
         </Navbar.Toggle>
         <Navbar.Collapse>
           <Nav className="text-uppercase ml-auto">
-            <NavItem to="services" onClick={closeMenu} />
-            <NavItem to="portfolio" onClick={closeMenu} />
-            <NavItem to="about" onClick={closeMenu} />
-            <NavItem to="team" onClick={closeMenu} />
-            <NavItem to="contact" onClick={closeMenu} />
+            {nodes.map(({ frontmatter: { anchor } }) => (
+              <NavItem key={anchor} to={anchor} onClick={closeMenu} />
+            ))}
           </Nav>
         </Navbar.Collapse>
       </Container>

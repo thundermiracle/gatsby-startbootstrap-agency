@@ -1,18 +1,18 @@
 // Styling for the navbar
-#mainNav {
+.navbar-root {
   background-color: $gray-900;
   .navbar-toggler {
     font-size: 12px;
     right: 0;
     padding: 13px;
     text-transform: uppercase;
-    color: white;
+    color: white !important;
     border: 0;
     background-color: $primary;
     @include heading-font;
   }
   .navbar-brand {
-    color: $primary;
+    color: $primary !important;
     @include script-font;
     &.active,
     &:active,
@@ -23,7 +23,7 @@
   }
 }
 @media (min-width: 992px) {
-  #mainNav {
+  .navbar-root {
     padding-top: 25px;
     padding-bottom: 25px;
     -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;

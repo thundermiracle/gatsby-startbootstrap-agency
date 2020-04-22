@@ -13,6 +13,7 @@ const Portfolio = () => (
       query PortfolioQuery {
         markdownRemark(fileAbsolutePath: { regex: "/portfolio/i" }) {
           frontmatter {
+            anchor
             header
             subheader
             portfolios {
@@ -34,10 +35,10 @@ const Portfolio = () => (
         return null;
       }
 
-      const { header: rootHeader, subheader: rootSubHeader, portfolios } = frontmatter;
+      const { anchor, header: rootHeader, subheader: rootSubHeader, portfolios } = frontmatter;
 
       return (
-        <PageSection className="bg-light" id="portfolio">
+        <PageSection className="bg-light portfolio-section" id={anchor}>
           <Row>
             <SectionHeader header={rootHeader} subheader={rootSubHeader} />
           </Row>

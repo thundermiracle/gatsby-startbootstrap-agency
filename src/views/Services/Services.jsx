@@ -13,6 +13,7 @@ const Services = () => (
       query ServicesQuery {
         markdownRemark(fileAbsolutePath: { regex: "/services/i" }) {
           frontmatter {
+            anchor
             header
             subheader
             services {
@@ -31,10 +32,10 @@ const Services = () => (
         return null;
       }
 
-      const { header: rootHeader, subheader: rootSubHeader, services } = frontmatter;
+      const { anchor, header: rootHeader, subheader: rootSubHeader, services } = frontmatter;
 
       return (
-        <PageSection id="services">
+        <PageSection id={anchor}>
           <Row>
             <SectionHeader header={rootHeader} subheader={rootSubHeader} />
           </Row>

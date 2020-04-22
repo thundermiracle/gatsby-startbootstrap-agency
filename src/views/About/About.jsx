@@ -15,6 +15,7 @@ const About = () => (
       query AboutQuery {
         markdownRemark(fileAbsolutePath: { regex: "/about/i" }) {
           frontmatter {
+            anchor
             header
             subheader
             timeline {
@@ -35,10 +36,10 @@ const About = () => (
         return null;
       }
 
-      const { header: rootHeader, subheader: rootSubHeader, timeline } = frontmatter;
+      const { anchor, header: rootHeader, subheader: rootSubHeader, timeline } = frontmatter;
 
       return (
-        <PageSection id="about">
+        <PageSection id={anchor}>
           <Row>
             <SectionHeader header={rootHeader} subheader={rootSubHeader} />
           </Row>

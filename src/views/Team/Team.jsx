@@ -13,6 +13,7 @@ const Team = () => (
       query TeamQuery {
         markdownRemark(fileAbsolutePath: { regex: "/team/i" }) {
           frontmatter {
+            anchor
             header
             subheader
             content
@@ -38,6 +39,7 @@ const Team = () => (
       }
 
       const {
+        anchor,
         header: rootHeader,
         subheader: rootSubHeader,
         content: rootContent,
@@ -45,7 +47,7 @@ const Team = () => (
       } = frontmatter;
 
       return (
-        <PageSection className="bg-light" id="team">
+        <PageSection className="bg-light" id={anchor}>
           <Row>
             <SectionHeader header={rootHeader} subheader={rootSubHeader} />
           </Row>
