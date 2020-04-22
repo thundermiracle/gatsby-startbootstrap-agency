@@ -10,7 +10,7 @@ import "./Portfolio.scss";
 const Portfolio = () => (
   <StaticQuery
     query={graphql`
-      query PortfoliosQuery {
+      query PortfolioQuery {
         markdownRemark(fileAbsolutePath: { regex: "/portfolio/i" }) {
           frontmatter {
             header

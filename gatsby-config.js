@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
   siteMetadata: {
-    title: "Gatsyby startbootstrap-agency",
+    title: "Gatsyby Startbootstrap Agency",
     description: "gatsby version of startbootstrap-agency with i18n support.",
     author: "thundermiracle",
   },
