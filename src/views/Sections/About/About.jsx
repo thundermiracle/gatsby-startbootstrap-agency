@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import { StaticQuery, graphql } from "gatsby";
 
 import { Row, Col } from "react-bootstrap";
@@ -9,7 +11,7 @@ import nl2br from "utils/nl2br";
 
 import "./About.scss";
 
-const About = () => (
+const About = ({ className }) => (
   <StaticQuery
     query={graphql`
       query AboutQuery {
@@ -39,7 +41,7 @@ const About = () => (
       const { anchor, header: rootHeader, subheader: rootSubHeader, timeline } = frontmatter;
 
       return (
-        <PageSection id={anchor}>
+        <PageSection className={className} id={anchor}>
           <Row>
             <SectionHeader header={rootHeader} subheader={rootSubHeader} />
           </Row>
@@ -73,5 +75,13 @@ const About = () => (
     }}
   />
 );
+
+About.propTypes = {
+  className: PropTypes.string,
+};
+
+About.defaultProps = {
+  className: null,
+};
 
 export default About;

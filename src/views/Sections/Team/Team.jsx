@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import { StaticQuery, graphql } from "gatsby";
 
 import { Row, Col } from "react-bootstrap";
@@ -7,7 +9,7 @@ import SectionHeader from "components/SectionHeader";
 import PageSection from "components/PageSection";
 import "./Team.scss";
 
-const Team = () => (
+const Team = ({ className }) => (
   <StaticQuery
     query={graphql`
       query TeamQuery {
@@ -47,7 +49,7 @@ const Team = () => (
       } = frontmatter;
 
       return (
-        <PageSection className="bg-light" id={anchor}>
+        <PageSection className={className} id={anchor}>
           <Row>
             <SectionHeader header={rootHeader} subheader={rootSubHeader} />
           </Row>
@@ -68,5 +70,13 @@ const Team = () => (
     }}
   />
 );
+
+Team.propTypes = {
+  className: PropTypes.string,
+};
+
+Team.defaultProps = {
+  className: null,
+};
 
 export default Team;

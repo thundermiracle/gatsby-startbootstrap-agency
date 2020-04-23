@@ -1,11 +1,13 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import { StaticQuery, graphql } from "gatsby";
 
 import { Row, Col } from "react-bootstrap";
 import Icon from "components/Icon";
 import PageSection from "components/PageSection";
 
-const Contact = () => (
+const Contact = ({ className }) => (
   <StaticQuery
     query={graphql`
       query ContactQuery {
@@ -30,7 +32,7 @@ const Contact = () => (
       const { anchor, header, subheader, telephone, email } = frontmatter;
 
       return (
-        <PageSection id={anchor}>
+        <PageSection className={className} id={anchor}>
           <Row className="justify-content-center">
             <Col lg={8} className="text-center">
               <h2 className="mt-0">{header}</h2>
@@ -57,5 +59,13 @@ const Contact = () => (
     }}
   />
 );
+
+Contact.propTypes = {
+  className: PropTypes.string,
+};
+
+Contact.defaultProps = {
+  className: null,
+};
 
 export default Contact;

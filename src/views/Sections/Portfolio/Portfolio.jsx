@@ -1,4 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
+import clsx from "clsx";
+
 import { StaticQuery, graphql } from "gatsby";
 
 import { Row } from "react-bootstrap";
@@ -7,7 +10,7 @@ import PortfolioItem from "components/PortfolioItem";
 import PageSection from "components/PageSection";
 import "./Portfolio.scss";
 
-const Portfolio = () => (
+const Portfolio = ({ className }) => (
   <StaticQuery
     query={graphql`
       query PortfolioQuery {
@@ -38,7 +41,7 @@ const Portfolio = () => (
       const { anchor, header: rootHeader, subheader: rootSubHeader, portfolios } = frontmatter;
 
       return (
-        <PageSection className="bg-light portfolio-section" id={anchor}>
+        <PageSection className={clsx("portfolio-section", className)} id={anchor}>
           <Row>
             <SectionHeader header={rootHeader} subheader={rootSubHeader} />
           </Row>
@@ -68,5 +71,13 @@ const Portfolio = () => (
     }}
   />
 );
+
+Portfolio.propTypes = {
+  className: PropTypes.string,
+};
+
+Portfolio.defaultProps = {
+  className: null,
+};
 
 export default Portfolio;

@@ -1,18 +1,39 @@
 import React from "react";
+import PropTypes from "prop-types";
+import { graphql } from "gatsby";
 
 import Navbar from "views/Navbar";
 import Top from "views/Top";
-import Services from "views/Services";
-import Portfolio from "views/Portfolio";
-import About from "views/About";
-import Team from "views/Team";
-import Contact from "views/Contact";
 import Footer from "views/Footer";
+import * as Sections from "views/Sections";
 import SEO from "components/SEO";
 import "utils/fixFontAwesome";
 import "../style/main.scss";
+import fileToComponentName from "utils/fileToComponentName";
 
-function IndexPage() {
+/**
+ * get file name list from content/sections folder
+ */
+export const query = graphql`
+  query IndexQuery {
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "//sections//i" } }
+      sort: { fields: fileAbsolutePath }
+    ) {
+      nodes {
+        fields {
+          fileName
+        }
+      }
+    }
+  }
+`;
+
+const IndexPage = ({ data }) => {
+  const {
+    allMarkdownRemark: { nodes },
+  } = data;
+
   return (
     <>
       <SEO
@@ -31,14 +52,28 @@ function IndexPage() {
       />
       <Navbar />
       <Top />
-      <Services />
-      <Portfolio />
-      <About />
-      <Team />
-      <Contact />
+      {
+        // dynamically import sections
+        nodes
+          .map((node) => fileToComponentName(node.fields.fileName))
+          .filter((x) => x)
+          .map((sectionComponentName, ind) => {
+            const SectionComponent = Sections[sectionComponentName];
+            return SectionComponent ? (
+              <SectionComponent
+                key={sectionComponentName}
+                className={ind % 2 === 1 ? "bg-light" : null}
+              />
+            ) : null;
+          })
+      }
       <Footer />
     </>
   );
-}
+};
+
+IndexPage.propTypes = {
+  data: PropTypes.object.isRequired,
+};
 
 export default IndexPage;

@@ -18,7 +18,10 @@ const MyNavbar = () => {
   } = useStaticQuery(graphql`
     query NavBarQuery {
       allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/sections/i" } }
+        filter: {
+          fileAbsolutePath: { regex: "//sections//" }
+          frontmatter: { anchor: { ne: null } }
+        }
         sort: { fields: fileAbsolutePath }
       ) {
         nodes {

@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import { StaticQuery, graphql } from "gatsby";
 
 import { Row, Col } from "react-bootstrap";
@@ -7,7 +9,7 @@ import ServiceItem from "components/ServiceItem";
 import SectionHeader from "components/SectionHeader";
 import PageSection from "components/PageSection";
 
-const Services = () => (
+const Services = ({ className }) => (
   <StaticQuery
     query={graphql`
       query ServicesQuery {
@@ -35,7 +37,7 @@ const Services = () => (
       const { anchor, header: rootHeader, subheader: rootSubHeader, services } = frontmatter;
 
       return (
-        <PageSection id={anchor}>
+        <PageSection className={className} id={anchor}>
           <Row>
             <SectionHeader header={rootHeader} subheader={rootSubHeader} />
           </Row>
@@ -51,5 +53,13 @@ const Services = () => (
     }}
   />
 );
+
+Services.propTypes = {
+  className: PropTypes.string,
+};
+
+Services.defaultProps = {
+  className: null,
+};
 
 export default Services;

@@ -75,6 +75,7 @@
     "url": "git+https://github.com/thundermiracle/gatsby-startbootstrap-agency.git"
   },
   "scripts": {
+    "clean": "gatsby clean",
     "build": "gatsby build",
     "dev": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
