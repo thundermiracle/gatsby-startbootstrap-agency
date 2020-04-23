@@ -7,6 +7,24 @@ module.exports = {
     author: "thundermiracle",
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-google-analytics",
+      options: {
+        trackingId: "UA-119418003-5",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        name: "Gatsby Startbootstrap Agency",
+        short_name: "Agency",
+        start_url: "/",
+        background_color: "#ffffff",
+        theme_color: "#663399",
+        display: "minimal-ui",
+        icon: "content/assets/gatsby-icon.png",
+      },
+    },
     "gatsby-transformer-remark",
     {
       resolve: "gatsby-source-filesystem",
@@ -27,18 +45,6 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     "gatsby-plugin-offline",
-    {
-      resolve: "gatsby-plugin-manifest",
-      options: {
-        name: "Gatsby Startbootstrap Agency",
-        short_name: "Agency",
-        start_url: "/",
-        background_color: "#ffffff",
-        theme_color: "#663399",
-        display: "minimal-ui",
-        icon: "content/assets/gatsby-icon.png",
-      },
-    },
     {
       resolve: "gatsby-plugin-sass",
       options: {
