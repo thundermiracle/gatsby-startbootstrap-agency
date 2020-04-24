@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import * as AllIcons from "config/AllIcons";
+import * as AllIcons from "components/SystemIcons";
 
 const Icon = ({ iconName, ...restProps }) => {
   const IconComponent = AllIcons[iconName];
