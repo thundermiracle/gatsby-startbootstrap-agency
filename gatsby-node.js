@@ -1,5 +1,6 @@
 const path = require("path");
 
+// add fileName to node for markdown files
 exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions;
 
@@ -11,4 +12,28 @@ exports.onCreateNode = ({ node, actions }) => {
       value: fileName,
     });
   }
+};
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  const typeDefs = [
+    "type MarkdownRemark implements Node { frontmatter: Frontmatter }",
+    `type Frontmatter {
+      jumpToAnchor: String
+      jumpToAnchorText: String
+      teammember: [TeamMember]
+    }`,
+    `type TeamMember {
+      imageFileName: String!
+      header: String!
+      subheader: String!
+      twitter: String
+      facebook: String
+      linkedin: String
+      medium: String
+      github: String
+    }`,
+  ];
+
+  createTypes(typeDefs);
 };
