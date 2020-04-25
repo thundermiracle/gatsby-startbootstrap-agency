@@ -56,7 +56,7 @@ const Portfolio = ({ className }) => (
                   content={content}
                   imageFileNameDetail={imageFileNameDetail}
                   extraInfo={
-                    <ul className="list-inline">
+                    <ul>
                       {extraInfo.map((ei) => (
                         <li key={ei}>{ei}</li>
                       ))}

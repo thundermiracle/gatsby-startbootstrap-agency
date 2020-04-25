@@ -2,11 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import Image from "components/Image";
-import Twitter from "components/Twitter";
-import Facebook from "components/Facebook";
-import Linkedin from "components/Linkedin";
-import Github from "components/Github";
-import Medium from "components/Medium";
+import * as SocialIcons from "components/SocialIcons";
 
 import "./TeamMember.scss";
 
@@ -21,31 +17,11 @@ const TeamMember = ({
   github,
   medium,
 }) => {
-  const twitterPart = twitter ? (
-    <li className="list-inline-item">
-      <Twitter username={twitter} />
-    </li>
-  ) : null;
-  const facebookPart = facebook ? (
-    <li className="list-inline-item">
-      <Facebook username={facebook} />
-    </li>
-  ) : null;
-  const linkedinPart = linkedin ? (
-    <li className="list-inline-item">
-      <Linkedin username={linkedin} />
-    </li>
-  ) : null;
-  const githubPart = github ? (
-    <li className="list-inline-item">
-      <Github username={github} />
-    </li>
-  ) : null;
-  const mediumPart = medium ? (
-    <li className="list-inline-item">
-      <Medium username={medium} />
-    </li>
-  ) : null;
+  const twitterPart = twitter ? <SocialIcons.Twitter userName={twitter} /> : null;
+  const facebookPart = facebook ? <SocialIcons.Facebook userName={facebook} /> : null;
+  const linkedinPart = linkedin ? <SocialIcons.Linkedin userName={linkedin} /> : null;
+  const githubPart = github ? <SocialIcons.Github userName={github} /> : null;
+  const mediumPart = medium ? <SocialIcons.Medium userName={medium} /> : null;
 
   return (
     <div className="team-member">
@@ -56,13 +32,13 @@ const TeamMember = ({
       />
       <h4>{header}</h4>
       <p className="text-muted">{subheader}</p>
-      <ul className="list-inline social-buttons">
+      <div>
         {twitterPart}
         {facebookPart}
         {linkedinPart}
         {githubPart}
         {mediumPart}
-      </ul>
+      </div>
     </div>
   );
 };

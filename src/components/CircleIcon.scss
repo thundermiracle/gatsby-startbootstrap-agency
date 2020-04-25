@@ -1,0 +1,20 @@
+.circle-icon {
+  text-align: center;
+  margin-right: 0.5rem;
+  font-size: 20px;
+  line-height: 40px;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s;
+  color: white;
+  border-radius: 100%;
+  outline: none;
+  background-color: $gray-900;
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: $primary;
+    color: white;
+  }
+}
