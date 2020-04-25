@@ -58,7 +58,19 @@ gatsby new my-blog-folder https://github.com/thundermiracle/gatsby-startbootstra
 
 ## Configuration
 
-coming soon...
+- `iconName` in Services.md MUST be defined in `'config/CustomIcons.jsx'`.
+
+- `imageFileName` in markdown MUST be added in `'content/assets'`.
+
+- all configurable contents are saved in markdown files in `'content'` folder.
+
+- change `file name's number` in `'content/sections'` folder to change the sort order.
+
+- nullable items (if defined):
+  
+  - `anchor` in section markdown: display in menu if defined in sections' markdown
+  - items in `social`: `twitter, facebook, linkedin, github, medium`
+  - `jumpToAnchor, jumpToAnchorText` in Top.md: add button in Top section
 
 ## License
 
