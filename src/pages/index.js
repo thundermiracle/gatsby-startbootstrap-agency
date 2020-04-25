@@ -8,8 +8,8 @@ import Footer from "views/Footer";
 import * as Sections from "views/Sections";
 import SEO from "components/SEO";
 import "utils/fixFontAwesome";
-import "../style/main.scss";
 import fileToComponentName from "utils/fileToComponentName";
+import "../style/main.scss";
 
 /**
  * get file name list from content/sections folder
