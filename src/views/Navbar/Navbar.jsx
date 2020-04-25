@@ -30,7 +30,7 @@ const MyNavbar = () => {
           }
         }
       }
-      markdownRemark(fileAbsolutePath: { regex: "/navbar/i" }) {
+      markdownRemark(fields: { fileName: { regex: "/navbar/i" } }) {
         frontmatter {
           brand
           menuText

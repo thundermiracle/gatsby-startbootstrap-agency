@@ -24,7 +24,6 @@ const Clients = ({ className }) => {
   `);
 
   const frontmatter = markdownRemark.frontmatter;
-
   if (!frontmatter) {
     return null;
   }

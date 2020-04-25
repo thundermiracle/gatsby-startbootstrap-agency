@@ -7,7 +7,7 @@ import Img from "gatsby-image";
 const Image = ({ fileName, alt, ...restProps }) => (
   <StaticQuery
     query={graphql`
-      query {
+      query ImageQuery {
         images: allFile {
           edges {
             node {
