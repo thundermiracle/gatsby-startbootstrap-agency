@@ -18,7 +18,7 @@ export const query = graphql`
   query IndexQuery {
     allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "//sections//i" } }
-      sort: { fields: fileAbsolutePath }
+      sort: { fields: fields___fileName }
     ) {
       nodes {
         fields {

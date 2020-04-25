@@ -23,11 +23,13 @@ const Team = ({ className }) => (
               header
               imageFileName
               subheader
-              facebook
-              github
-              linkedin
-              medium
-              twitter
+              social {
+                facebook
+                github
+                linkedin
+                medium
+                twitter
+              }
             }
           }
         }

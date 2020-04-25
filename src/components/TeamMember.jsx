@@ -11,11 +11,7 @@ const TeamMember = ({
   imageAlt,
   header,
   subheader,
-  twitter,
-  facebook,
-  linkedin,
-  github,
-  medium,
+  social: { twitter, facebook, linkedin, github, medium },
 }) => {
   const twitterPart = twitter ? <SocialIcons.Twitter userName={twitter} /> : null;
   const facebookPart = facebook ? <SocialIcons.Facebook userName={facebook} /> : null;
@@ -48,22 +44,26 @@ TeamMember.propTypes = {
   imageAlt: PropTypes.string,
   header: PropTypes.string,
   subheader: PropTypes.string,
-  twitter: PropTypes.string,
-  facebook: PropTypes.string,
-  linkedin: PropTypes.string,
-  github: PropTypes.string,
-  medium: PropTypes.string,
+  social: PropTypes.shape({
+    twitter: PropTypes.string,
+    facebook: PropTypes.string,
+    linkedin: PropTypes.string,
+    github: PropTypes.string,
+    medium: PropTypes.string,
+  }),
 };
 
 TeamMember.defaultProps = {
   imageAlt: null,
   header: "",
   subheader: "",
-  twitter: null,
-  facebook: null,
-  linkedin: null,
-  github: null,
-  medium: null,
+  social: {
+    twitter: null,
+    facebook: null,
+    linkedin: null,
+    github: null,
+    medium: null,
+  },
 };
 
 export default TeamMember;

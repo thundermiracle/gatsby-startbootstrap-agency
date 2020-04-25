@@ -21,18 +21,21 @@ exports.createSchemaCustomization = ({ actions }) => {
     `type Frontmatter {
       jumpToAnchor: String
       jumpToAnchorText: String
+      social: Social
       teammember: [TeamMember]
     }`,
     `type TeamMember {
-      imageFileName: String!
-      header: String!
-      subheader: String!
+      social: Social
+    }`,
+    `
+    type Social {
       twitter: String
       facebook: String
       linkedin: String
       medium: String
       github: String
-    }`,
+    }
+    `,
   ];
 
   createTypes(typeDefs);
