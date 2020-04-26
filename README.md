@@ -24,6 +24,10 @@ gatsby version of startbootstrap-agency with i18n supported.
 
 [※ startbootstrap-agency-webpack(Webpack Version)](https://github.com/thundermiracle/startbootstrap-agency-webpack/)
 
+## Note
+
+__If you're not interesting in i18n pages, use [StaticQueryVersion](https://github.com/thundermiracle/gatsby-startbootstrap-agency/tree/StaticQueryVersion) which gets better performance and better code structure.__
+
 ## How to use
 
 ```sh

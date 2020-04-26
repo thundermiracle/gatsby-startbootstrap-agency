@@ -1,6 +1,8 @@
 const path = require("path");
 
-// add fileName to node for markdown files
+/**
+ * add fileName to node for markdown files
+ */
 exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions;
 
@@ -20,6 +22,9 @@ exports.onCreateNode = ({ node, actions }) => {
   }
 };
 
+/**
+ * define nullable items
+ */
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
   const typeDefs = [
