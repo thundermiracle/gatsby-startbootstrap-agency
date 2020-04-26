@@ -1,32 +1,10 @@
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import PropTypes from "prop-types";
 
 import { Container, Row, Col } from "react-bootstrap";
 import * as SocialIcons from "components/SocialIcons";
 
-const Footer = () => {
-  const { markdownRemark } = useStaticQuery(graphql`
-    query FooterQuery {
-      markdownRemark(fields: { fileName: { regex: "/footer/i" } }) {
-        frontmatter {
-          copyright
-          privacyHref
-          privacyText
-          termsHref
-          termsText
-          social {
-            facebook
-            github
-            linkedin
-            medium
-            twitter
-          }
-        }
-      }
-    }
-  `);
-
-  const frontmatter = markdownRemark.frontmatter;
+const Footer = ({ frontmatter }) => {
   if (!frontmatter) {
     return null;
   }
@@ -64,6 +42,14 @@ const Footer = () => {
       </Container>
     </footer>
   );
+};
+
+Footer.propTypes = {
+  frontmatter: PropTypes.object,
+};
+
+Footer.defaultProps = {
+  frontmatter: null,
 };
 
 export default Footer;

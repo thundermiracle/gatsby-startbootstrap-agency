@@ -7,8 +7,11 @@ import Top from "views/Top";
 import Footer from "views/Footer";
 import * as Sections from "views/Sections";
 import SEO from "components/SEO";
+
 import "utils/fixFontAwesome";
-import fileToComponentName from "utils/fileToComponentName";
+import breakDownAllNodes from "utils/breakDownAllNodes";
+import fileNameToSectionName from "utils/fileNameToSectionName";
+
 import "../style/main.scss";
 
 /**
@@ -16,13 +19,73 @@ import "../style/main.scss";
  */
 export const query = graphql`
   query IndexQuery {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "//sections//i" } }
-      sort: { fields: fields___fileName }
-    ) {
+    allMarkdownRemark(sort: { order: ASC, fields: [fields___directoryName, fields___fileName] }) {
       nodes {
+        frontmatter {
+          brand
+          anchor
+          clients {
+            href
+            imageFileName
+          }
+          content
+          copyright
+          header
+          email
+          imageFileName
+          jumpToAnchor
+          jumpToAnchorText
+          menuText
+          portfolios {
+            content
+            extraInfo
+            header
+            subheader
+            imageFileNameDetail
+            imageFileName
+          }
+          privacyHref
+          privacyText
+          services {
+            content
+            header
+            iconName
+          }
+          social {
+            facebook
+            github
+            linkedin
+            medium
+            twitter
+          }
+          subheader
+          teamMember {
+            header
+            imageFileName
+            social {
+              facebook
+              github
+              linkedin
+              medium
+              twitter
+            }
+            subheader
+          }
+          telephone
+          termsHref
+          termsText
+          title
+          timeline {
+            content
+            header
+            imageContent
+            imageFileName
+            subheader
+          }
+        }
         fields {
           fileName
+          directoryName
         }
       }
     }
@@ -33,6 +96,8 @@ const IndexPage = ({ data }) => {
   const {
     allMarkdownRemark: { nodes },
   } = data;
+
+  const { topNode, navBarNode, anchors, footerNode, sectionsNodes } = breakDownAllNodes(nodes);
 
   return (
     <>
@@ -50,24 +115,24 @@ const IndexPage = ({ data }) => {
         ]}
         description="gatsby version of startbootstrap-agency with i18n support"
       />
-      <Navbar />
-      <Top />
+      <Navbar anchors={anchors} frontmatter={navBarNode.frontmatter} />
+      <Top frontmatter={topNode.frontmatter} />
       {
         // dynamically import sections
-        nodes
-          .map((node) => fileToComponentName(node.fields.fileName))
-          .filter((x) => x)
-          .map((sectionComponentName, ind) => {
-            const SectionComponent = Sections[sectionComponentName];
-            return SectionComponent ? (
-              <SectionComponent
-                key={sectionComponentName}
-                className={ind % 2 === 1 ? "bg-light" : null}
-              />
-            ) : null;
-          })
+        sectionsNodes.map(({ frontmatter, fields: { fileName } }, ind) => {
+          const sectionComponentName = fileNameToSectionName(fileName);
+          const SectionComponent = Sections[sectionComponentName];
+
+          return SectionComponent ? (
+            <SectionComponent
+              key={sectionComponentName}
+              className={ind % 2 === 1 ? "bg-light" : null}
+              frontmatter={frontmatter}
+            />
+          ) : null;
+        })
       }
-      <Footer />
+      <Footer frontmatter={footerNode.frontmatter} />
     </>
   );
 };

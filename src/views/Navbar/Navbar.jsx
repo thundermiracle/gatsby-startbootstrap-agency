@@ -1,6 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import clsx from "clsx";
-import { useStaticQuery, graphql } from "gatsby";
 
 import { Navbar, Container, Nav } from "react-bootstrap";
 
@@ -11,33 +12,8 @@ import NavItem from "components/NavItem";
 
 import "./Navbar.scss";
 
-const MyNavbar = () => {
-  const {
-    allMarkdownRemark: { nodes },
-    markdownRemark = { frontmatter: {} },
-  } = useStaticQuery(graphql`
-    query NavBarQuery {
-      allMarkdownRemark(
-        filter: {
-          fileAbsolutePath: { regex: "//sections//" }
-          frontmatter: { anchor: { ne: null } }
-        }
-        sort: { fields: fileAbsolutePath }
-      ) {
-        nodes {
-          frontmatter {
-            anchor
-          }
-        }
-      }
-      markdownRemark(fields: { fileName: { regex: "/navbar/i" } }) {
-        frontmatter {
-          brand
-          menuText
-        }
-      }
-    }
-  `);
+const MyNavbar = ({ anchors, frontmatter }) => {
+  const { brand, menuText } = frontmatter;
 
   const handleScrollToTop = useSmoothScrollTo(0);
 
@@ -69,15 +45,15 @@ const MyNavbar = () => {
     >
       <Container>
         <Navbar.Brand className="cursor-pointer" onClick={handleBrandClick}>
-          {markdownRemark.frontmatter.brand}
+          {brand}
         </Navbar.Brand>
         <Navbar.Toggle onClick={toggleMenu} aria-label="Toggle navigation">
-          {markdownRemark.frontmatter.menuText}
+          {menuText}
           <Icon iconName="BarsIcon" />
         </Navbar.Toggle>
         <Navbar.Collapse>
           <Nav className="text-uppercase ml-auto">
-            {nodes.map(({ frontmatter: { anchor } }) => (
+            {anchors.map((anchor) => (
               <NavItem key={anchor} to={anchor} onClick={closeMenu} />
             ))}
           </Nav>
@@ -85,6 +61,16 @@ const MyNavbar = () => {
       </Container>
     </Navbar>
   );
+};
+
+MyNavbar.propTypes = {
+  anchors: PropTypes.arrayOf(PropTypes.string),
+  frontmatter: PropTypes.object,
+};
+
+MyNavbar.defaultProps = {
+  anchors: [],
+  frontmatter: {},
 };
 
 export default MyNavbar;

@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { useStaticQuery, graphql } from "gatsby";
-
 import { Row, Col } from "react-bootstrap";
 import TimelineItem from "components/TimelineItem";
 import SectionHeader from "components/SectionHeader";
@@ -11,27 +9,7 @@ import nl2br from "utils/nl2br";
 
 import "./About.scss";
 
-const About = ({ className }) => {
-  const { markdownRemark = {} } = useStaticQuery(graphql`
-    query AboutQuery {
-      markdownRemark(fields: { fileName: { regex: "/about/i" } }) {
-        frontmatter {
-          anchor
-          header
-          subheader
-          timeline {
-            content
-            header
-            imageContent
-            imageFileName
-            subheader
-          }
-        }
-      }
-    }
-  `);
-
-  const frontmatter = markdownRemark.frontmatter;
+const About = ({ className, frontmatter }) => {
   if (!frontmatter) {
     return null;
   }
@@ -70,10 +48,12 @@ const About = ({ className }) => {
 
 About.propTypes = {
   className: PropTypes.string,
+  frontmatter: PropTypes.object,
 };
 
 About.defaultProps = {
   className: null,
+  frontmatter: null,
 };
 
 export default About;

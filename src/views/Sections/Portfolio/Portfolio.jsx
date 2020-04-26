@@ -2,36 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
-import { useStaticQuery, graphql } from "gatsby";
-
 import { Row } from "react-bootstrap";
 import SectionHeader from "components/SectionHeader";
 import PortfolioItem from "components/PortfolioItem";
 import PageSection from "components/PageSection";
 import "./Portfolio.scss";
 
-const Portfolio = ({ className }) => {
-  const { markdownRemark = {} } = useStaticQuery(graphql`
-    query PortfolioQuery {
-      markdownRemark(fields: { fileName: { regex: "/portfolio/i" } }) {
-        frontmatter {
-          anchor
-          header
-          subheader
-          portfolios {
-            content
-            extraInfo
-            header
-            imageFileName
-            imageFileNameDetail
-            subheader
-          }
-        }
-      }
-    }
-  `);
-
-  const frontmatter = markdownRemark.frontmatter;
+const Portfolio = ({ className, frontmatter }) => {
   if (!frontmatter) {
     return null;
   }
@@ -70,10 +47,12 @@ const Portfolio = ({ className }) => {
 
 Portfolio.propTypes = {
   className: PropTypes.string,
+  frontmatter: PropTypes.object,
 };
 
 Portfolio.defaultProps = {
   className: null,
+  frontmatter: null,
 };
 
 export default Portfolio;

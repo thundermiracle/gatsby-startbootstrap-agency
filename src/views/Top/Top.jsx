@@ -1,28 +1,11 @@
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import PropTypes from "prop-types";
 
 import { Button } from "react-bootstrap";
 import useSmoothScrollTo from "hooks/useSmoothScrollTo";
 import ImageCard from "components/ImageCard";
 
-const Top = () => {
-  const { markdownRemark = {} } = useStaticQuery(
-    graphql`
-      query TopQuery {
-        markdownRemark(fileAbsolutePath: { regex: "/top/i" }) {
-          frontmatter {
-            header
-            subheader
-            imageFileName
-            jumpToAnchor
-            jumpToAnchorText
-          }
-        }
-      }
-    `,
-  );
-
-  const frontmatter = markdownRemark.frontmatter;
+const Top = ({ frontmatter }) => {
   if (!frontmatter) {
     return null;
   }
@@ -48,6 +31,14 @@ const Top = () => {
       extraInfo={extraInfoPart}
     />
   );
+};
+
+Top.propTypes = {
+  frontmatter: PropTypes.object,
+};
+
+Top.defaultProps = {
+  frontmatter: null,
 };
 
 export default Top;

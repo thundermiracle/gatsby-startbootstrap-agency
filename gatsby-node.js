@@ -11,6 +11,12 @@ exports.onCreateNode = ({ node, actions }) => {
       name: "fileName",
       value: fileName,
     });
+
+    createNodeField({
+      node,
+      name: "directoryName",
+      value: path.basename(path.dirname(node.fileAbsolutePath)),
+    });
   }
 };
 
@@ -23,7 +29,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       jumpToAnchor: String
       jumpToAnchorText: String
       social: Social
-      teammember: [TeamMember]
+      teamMember: [TeamMember]
     }`,
     `type TeamMember {
       social: Social
