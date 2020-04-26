@@ -18,8 +18,17 @@ import "../style/main.scss";
  * get file name list from content/sections folder
  */
 export const query = graphql`
-  query IndexQuery {
-    allMarkdownRemark(sort: { order: ASC, fields: [fields___directoryName, fields___fileName] }) {
+  query IndexQuery($langKey: String!) {
+    site {
+      siteMetadata {
+        keywords
+        description
+      }
+    }
+    allMarkdownRemark(
+      filter: { fields: { langKey: { eq: $langKey } } }
+      sort: { order: ASC, fields: [fields___directoryName, fields___fileName] }
+    ) {
       nodes {
         frontmatter {
           brand
@@ -94,6 +103,9 @@ export const query = graphql`
 
 const IndexPage = ({ data }) => {
   const {
+    site: {
+      siteMetadata: { keywords, description },
+    },
     allMarkdownRemark: { nodes },
   } = data;
 
@@ -101,20 +113,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <>
-      <SEO
-        title="Main"
-        keywords={[
-          "gatsby",
-          "gatsbyjs",
-          "landing page",
-          "landing",
-          "i18n",
-          "eslint",
-          "bootstrap",
-          "startbootstrap-agency",
-        ]}
-        description="gatsby version of startbootstrap-agency with i18n support"
-      />
+      <SEO title="Top" keywords={keywords} description={description} />
       <Navbar anchors={anchors} frontmatter={navBarNode.frontmatter} />
       <Top frontmatter={topNode.frontmatter} />
       {
