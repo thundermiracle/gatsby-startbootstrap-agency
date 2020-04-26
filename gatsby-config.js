@@ -1,26 +1,28 @@
 const path = require("path");
+const { title, keywords, description, author, defaultLang, trackingId } = require("./config/site");
 
 module.exports = {
   siteMetadata: {
-    title: "Gatsyby Startbootstrap Agency",
-    description: "gatsby version of startbootstrap-agency with i18n support.",
-    author: "thundermiracle",
+    title,
+    keywords,
+    description,
+    author,
   },
   plugins: [
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
-        trackingId: "UA-119418003-5",
+        trackingId,
       },
     },
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: "Gatsby Startbootstrap Agency",
+        name: title,
         short_name: "Agency",
         start_url: "/",
         background_color: "#ffffff",
-        theme_color: "#663399",
+        theme_color: "#fed136",
         display: "minimal-ui",
         icon: "content/assets/gatsby-icon.png",
       },
@@ -68,7 +70,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-i18n",
       options: {
-        langKeyDefault: "en",
+        langKeyDefault: defaultLang,
         useLangKeyLayout: false,
         pagesPaths: ["/content/"],
       },
