@@ -26,7 +26,7 @@ gatsby version of startbootstrap-agency with i18n supported.
 
 ## Note
 
-__If you're not interesting in i18n pages, use [StaticQueryVersion](https://github.com/thundermiracle/gatsby-startbootstrap-agency/tree/StaticQueryVersion) which gets better performance and better code structure.__
+__If you're not interesting in i18n, use [StaticQueryVersion](https://github.com/thundermiracle/gatsby-startbootstrap-agency/tree/StaticQueryVersion) instead. StaticQueryVersion gets better performance and better code structure.__
 
 ## How to use
 
@@ -60,7 +60,7 @@ gatsby new my-blog-folder https://github.com/thundermiracle/gatsby-startbootstra
 
 ![Original lighthouse](https://github.com/thundermiracle/gatsby-startbootstrap-agency/blob/screenshot/screenshot/lighthouse_original.png)
 
-## Configuration
+## Basic Configuration
 
 - `iconName` in Services.md MUST be defined in `'config/CustomIcons.jsx'`.
 
@@ -75,6 +75,14 @@ gatsby new my-blog-folder https://github.com/thundermiracle/gatsby-startbootstra
   - `anchor` in section markdown: display in menu if defined in sections' markdown
   - items in `social`: `twitter, facebook, linkedin, github, medium`
   - `jumpToAnchor, jumpToAnchorText` in Top.md: add button in Top section
+
+## i18n Configuration
+
+- set defaultLang in `'config/site.js'`
+
+- add langTextMap to `'config/site.js'` (LanguageSelector won't display if langTextMap is not defined. Consider using [StaticQueryVersion](#note) if i18n is not necessary)
+
+- copy markdown files in `'content'` folder, rename it to `xxxx.[langKey].md` and translate the contents
 
 ## License
 

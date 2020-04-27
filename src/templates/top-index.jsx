@@ -7,6 +7,7 @@ import Top from "views/Top";
 import Footer from "views/Footer";
 import * as Sections from "views/Sections";
 import SEO from "components/SEO";
+import LanguageSelector from "components/LanguageSelector";
 
 import "utils/fixFontAwesome";
 import breakDownAllNodes from "utils/breakDownAllNodes";
@@ -101,7 +102,7 @@ export const query = graphql`
   }
 `;
 
-const IndexPage = ({ data, pathContext: { langKey } }) => {
+const IndexPage = ({ data, pathContext: { langKey, defaultLang, langTextMap } }) => {
   const {
     site: {
       siteMetadata: { keywords, description },
@@ -111,10 +112,21 @@ const IndexPage = ({ data, pathContext: { langKey } }) => {
 
   const { topNode, navBarNode, anchors, footerNode, sectionsNodes } = breakDownAllNodes(nodes);
 
+  let langSelectorPart;
+  if (langTextMap != null && Object.keys(langTextMap).length > 1) {
+    langSelectorPart = (
+      <LanguageSelector langKey={langKey} defaultLang={defaultLang} langTextMap={langTextMap} />
+    );
+  }
+
   return (
     <>
       <SEO lang={langKey} title="Top" keywords={keywords} description={description} />
-      <Navbar anchors={anchors} frontmatter={navBarNode.frontmatter} />
+      <Navbar
+        anchors={anchors}
+        frontmatter={navBarNode.frontmatter}
+        extraItems={langSelectorPart}
+      />
       <Top frontmatter={topNode.frontmatter} />
       {
         // dynamically import sections
@@ -142,7 +154,11 @@ IndexPage.propTypes = {
 };
 
 IndexPage.defaultProps = {
-  pathContext: {},
+  pathContext: {
+    langKey: "en",
+    defaultLang: "en",
+    langTextMap: {},
+  },
 };
 
 export default IndexPage;
