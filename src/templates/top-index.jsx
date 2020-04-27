@@ -101,7 +101,7 @@ export const query = graphql`
   }
 `;
 
-const IndexPage = ({ data }) => {
+const IndexPage = ({ data, pathContext: { langKey } }) => {
   const {
     site: {
       siteMetadata: { keywords, description },
@@ -113,7 +113,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <>
-      <SEO title="Top" keywords={keywords} description={description} />
+      <SEO lang={langKey} title="Top" keywords={keywords} description={description} />
       <Navbar anchors={anchors} frontmatter={navBarNode.frontmatter} />
       <Top frontmatter={topNode.frontmatter} />
       {
@@ -138,6 +138,11 @@ const IndexPage = ({ data }) => {
 
 IndexPage.propTypes = {
   data: PropTypes.object.isRequired,
+  pathContext: PropTypes.object,
+};
+
+IndexPage.defaultProps = {
+  pathContext: {},
 };
 
 export default IndexPage;
