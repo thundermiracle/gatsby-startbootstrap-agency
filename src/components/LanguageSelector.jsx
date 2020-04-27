@@ -8,11 +8,14 @@ import { NavDropdown } from "react-bootstrap";
 import IconText from "components/IconText";
 import getBaseUrl from "utils/getBaseUrl";
 
+import "./LanguageSelector.scss";
+
 const LanguageSelector = ({ defaultLang, langKey, langTextMap }) => {
   return (
     <NavDropdown
       title={<IconText iconName="LanguageIcon" text={langTextMap[langKey]} />}
       id="language-dropdown"
+      className="language-selector"
     >
       {Object.keys(langTextMap).map((key) => {
         return (
