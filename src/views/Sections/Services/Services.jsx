@@ -20,9 +20,9 @@ const Services = ({ className, frontmatter }) => {
         <SectionHeader header={rootHeader} subheader={rootSubHeader} />
       </Row>
       <Row className="text-center">
-        {services.map(({ header, content, iconName }) => (
-          <Col md={4} key={header}>
-            <ServiceItem iconName={iconName} header={header} content={content} />
+        {services.map((service) => (
+          <Col md={4} key={service.header}>
+            <ServiceItem {...service} />
           </Col>
         ))}
       </Row>

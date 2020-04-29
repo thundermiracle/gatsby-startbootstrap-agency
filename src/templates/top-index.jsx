@@ -60,6 +60,7 @@ export const query = graphql`
             content
             header
             iconName
+            imageFileName
           }
           social {
             facebook
