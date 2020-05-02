@@ -55,16 +55,25 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-web-font-loader",
+      resolve: "gatsby-plugin-prefetch-google-fonts",
       options: {
-        google: {
-          families: [
-            "Montserrat:400,700",
-            "Kaushan+Script",
-            "Droid+Serif:400,700,400italic,700italic",
-            "Roboto+Slab:400,100,300,700",
-          ],
-        },
+        fonts: [
+          {
+            family: "Montserrat",
+            variants: [400, 700],
+          },
+          {
+            family: "Kaushan+Script",
+          },
+          {
+            family: "Droid+Serif",
+            variants: [400, 700, "400italic", "700italic"],
+          },
+          {
+            family: "Roboto+Slab",
+            variants: [400, 100, 300, 700],
+          },
+        ],
       },
     },
     {
