@@ -8,8 +8,8 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
-    "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@fortawesome/react-fontawesome": "^0.1.9",
     "bootstrap": "^4.4.1",
     "clsx": "^1.1.0",
@@ -19,6 +19,7 @@
     "gatsby-plugin-i18n": "^1.0.1",
     "gatsby-plugin-manifest": "^2.3.3",
     "gatsby-plugin-offline": "^3.1.2",
+    "gatsby-plugin-preload-fonts": "^1.2.20",
     "gatsby-plugin-react-helmet": "^3.2.2",
     "gatsby-plugin-sass": "^2.2.1",
     "gatsby-plugin-sharp": "^2.5.4",
@@ -87,6 +88,7 @@
     "serve": "gatsby serve",
     "eslint": "eslint ./src",
     "test": "cross-env NODE_ENV=test yarn run eslint",
-    "testbuild": "yarn test && yarn build"
+    "testbuild": "yarn test && yarn build",
+    "preload-fonts": "gatsby-preload-fonts"
   }
 }
