@@ -55,23 +55,25 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-prefetch-google-fonts",
+      resolve: "gatsby-omni-font-loader",
       options: {
-        fonts: [
+        preconnect: ["https://fonts.gstatic.com"],
+        web: [
           {
-            family: "Montserrat",
-            variants: [400, 700],
+            name: "Droid Sans",
+            file: "https://fonts.googleapis.com/css2?family=Droid+Sans&display=swap",
           },
           {
-            family: "Kaushan+Script",
+            name: "Montserrat",
+            file: "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap",
           },
           {
-            family: "Droid+Serif",
-            variants: [400, 700, "400italic", "700italic"],
+            name: "Kaushan Script",
+            file: "https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap",
           },
           {
-            family: "Roboto+Slab",
-            variants: [400, 100, 300, 700],
+            name: "Roboto Slab",
+            file: "https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap",
           },
         ],
       },
