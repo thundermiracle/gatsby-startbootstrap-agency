@@ -30,6 +30,10 @@ __If you're not interesting in i18n, use [StaticQueryVersion](https://github.com
 
 ## How to use
 
+This project is using `yarn` as the package manager. You have to set yarn as Gatsby-cli's package manager first.
+
+[https://www.gatsbyjs.com/docs/glossary/yarn/#using-yarn-as-your-gatsby-package-manager](https://www.gatsbyjs.com/docs/glossary/yarn/#using-yarn-as-your-gatsby-package-manager)
+
 ```sh
 npm install -g gatsby-cli
 
