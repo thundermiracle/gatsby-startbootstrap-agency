@@ -44,8 +44,13 @@ module.exports = {
     },
     "gatsby-plugin-eslint",
     "gatsby-plugin-react-helmet",
-    "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-transformer-sharp",
+      options: {
+        checkSupportedExtensions: false,
+      },
+    },
     "gatsby-plugin-offline",
     {
       resolve: "gatsby-plugin-sass",
