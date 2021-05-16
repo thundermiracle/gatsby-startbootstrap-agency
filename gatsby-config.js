@@ -15,6 +15,7 @@ module.exports = {
         trackingId,
       },
     },
+     "gatsby-plugin-image",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
