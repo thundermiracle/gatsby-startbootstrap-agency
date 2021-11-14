@@ -39,15 +39,15 @@
     "throttle-debounce": "^3.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.13",
-    "babel-eslint": "^10.1.0",
+    "@babel/core": "^7.16.0",
+    "@babel/eslint-parser": "^7.16.3",
     "babel-plugin-import": "^1.13.0",
     "babel-plugin-module-resolver": "^4.1.0",
     "babel-plugin-transform-imports": "^2.0.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "babel-preset-gatsby": "^2.1.2",
     "cross-env": "^7.0.2",
-    "eslint": "^7.22.0",
+    "eslint": "^8.2.0",
     "eslint-config-airbnb": "^19.0.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-config-react": "^1.1.7",
