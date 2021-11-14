@@ -52,7 +52,6 @@
     "eslint-config-prettier": "^8.1.0",
     "eslint-config-react": "^1.1.7",
     "eslint-import-resolver-babel-module": "^5.1.2",
-    "eslint-loader": "^4.0.0",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.23.1",
