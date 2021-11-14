@@ -23,6 +23,7 @@
     "no-console": 1,
     "no-irregular-whitespace": 0,
     "no-param-reassign": 0,
+    "no-restricted-exports": 0,
     "no-restricted-globals": 0,
     "no-underscore-dangle": 0,
     "no-unused-vars": 1,
@@ -42,7 +43,8 @@
     "react/react-in-jsx-scope": 0,
     "react/jsx-props-no-spreading": 0,
     "react-hooks/rules-of-hooks": 2,
-    "react-hooks/exhaustive-deps": 2
+    "react-hooks/exhaustive-deps": 2,
+    "react/function-component-definition": 0
   },
   "settings": {
     "import/resolver": {
