@@ -3,7 +3,7 @@ function getBaseUrl(defaultLang, lang) {
     return `/${lang}/`;
   }
 
-  return '/';
+  return "/";
 }
 
 module.exports = getBaseUrl;
