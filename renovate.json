@@ -1,0 +1,28 @@
+{
+  "extends": [
+    "config:base",
+    "schedule:weekly",
+    "group:allNonMajor",
+    "group:gatsbyMonorepo",
+    "group:linters",
+    "group:babelMonorepo",
+    "docker:disable"
+  ],
+  "rebaseWhen": "conflicted",
+  "labels": [
+    "dependencies"
+  ],
+  "rangeStrategy": "bump",
+  "packageRules": [
+    {
+      "groupName": "Font Awesome",
+      "matchPackagePatterns": [
+        "@fortawesome/*",
+        "@styled-icons/*"
+      ]
+    }
+  ],
+  "ignoreDeps": [
+    "node"
+  ]
+}
