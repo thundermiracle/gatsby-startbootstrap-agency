@@ -7,4 +7,5 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 
 // use this to prevent unnecessary css tree shaking
+// eslint-disable-next-line no-console
 console.log({ styles });
