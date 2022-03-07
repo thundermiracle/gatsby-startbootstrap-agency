@@ -1,0 +1,42 @@
+name: 'Netlify Preview Deploy'
+
+on:
+  pull_request:
+    types: ['opened', 'edited', 'synchronize']
+
+jobs:
+  deploy-preview:
+    name: 'Deploy Preview'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: deploy preview version of GatsbyJS to Netlify
+        uses: jsmrcaga/action-netlify-deploy@v1.7.2
+        id: deploy_preview
+        with:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          build_command: yarn && yarn testbuild
+          build_directory: 'public'
+      
+      - name: find the comment
+        uses: peter-evans/find-comment@v1
+        id: fc
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          comment-author: 'github-actions[bot]'
+          body-includes: Netlify Preview Deployment Information
+
+      - name: create or update comment
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            Netlify Preview Deployment Information
+            - Log URL: ${{ steps.deploy_preview.outputs.NETLIFY_LOGS_URL }}
+            - Preview URL: ${{ steps.deploy_preview.outputs.NETLIFY_PREVIEW_URL }}
+          edit-mode: replace
