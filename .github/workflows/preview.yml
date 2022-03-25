@@ -1,7 +1,7 @@
 name: 'Netlify Preview Deploy'
 
 env:
-  NODE_OPTIONS: --max-old-space-size=6144
+  NODE_OPTIONS: --max-old-space-size=7168
 
 on:
   pull_request:

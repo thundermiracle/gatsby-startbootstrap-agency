@@ -1,5 +1,8 @@
 name: 'Netlify Deploy'
 
+env:
+  NODE_OPTIONS: --max-old-space-size=7168
+
 on:
   push:
     branches:
@@ -11,15 +14,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: checkout
-        uses: actions/checkout@v3
-
-      - name: deploy production version of GatsbyJS to Netlify
-        uses: jsmrcaga/action-netlify-deploy@v1.7.2
+      - name: deploy to preview mode
+        uses: thundermiracle/netlify-deploy@v1
         with:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          NETLIFY_DEPLOY_MESSAGE: "Prod deploy v${{ github.ref }}"
-          NETLIFY_DEPLOY_TO_PROD: true
-          build_directory: 'public'
-          build_command: yarn && yarn testbuild
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN}}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID}}
+          deploy_dir: "./public"
+          build_command: yarn testbuild
+          cache_path: |
+            .cache
+            public
+            node_modules
+          production: true
