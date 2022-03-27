@@ -14,13 +14,13 @@ jobs:
 
     steps:
       - name: deploy to preview mode
-        uses: thundermiracle/netlify-deploy@v1
+        uses: thundermiracle/netlify-deploy@v2
         with:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN}}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID}}
-          deploy_dir: "./public"
-          build_command: yarn testbuild
-          cache_path: |
+          deploy-dir: "./public"
+          build-command: yarn testbuild
+          cache-path: |
             .cache
             public
             node_modules
