@@ -14,6 +14,7 @@ jobs:
 
     steps:
       - name: deploy to preview mode
+        id: pr
         uses: thundermiracle/netlify-deploy@v2
         with:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN}}
@@ -24,3 +25,11 @@ jobs:
             .cache
             public
             node_modules
+
+      - name: run lighthouse
+        uses: foo-software/lighthouse-check-action@master
+        with:
+          urls: ${{ steps.pr.outputs.NETLIFY_PREVIEW_URL }}
+          device: all
+          prCommentEnabled: true
+          gitHubAccessToken: ${{ secrets.GITHUB_TOKEN }}
