@@ -15,16 +15,15 @@ jobs:
     steps:
       - name: deploy to preview mode
         id: pr
-        uses: thundermiracle/netlify-deploy@v2
+        uses: thundermiracle/netlify-deploy@v3
         with:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN}}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID}}
           deploy-dir: "./public"
           build-command: yarn testbuild
-          cache-path: |
+          extra-cache-path: |
             .cache
             public
-            node_modules
 
       - name: run lighthouse
         uses: foo-software/lighthouse-check-action@master
