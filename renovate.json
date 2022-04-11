@@ -13,6 +13,9 @@
     "dependencies"
   ],
   "rangeStrategy": "bump",
+  "platformCommit": true,
+  "platformAutomerge": true,
+  "automerge": false,
   "packageRules": [
     {
       "groupName": "Font Awesome",
@@ -20,6 +23,22 @@
         "@fortawesome/*",
         "@styled-icons/*"
       ]
+    },
+    {
+      "extends": "packages:linters",
+      "groupName": "linters",
+      "automerge": true
+    },
+    {
+      "extends": "monorepo:babel",
+      "matchUpdateTypes": [
+        "digest",
+        "patch",
+        "minor",
+        "major"
+      ],
+      "groupName": "babel monorepo",
+      "automerge": true
     }
   ],
   "ignoreDeps": [
