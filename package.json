@@ -32,16 +32,16 @@
     "prop-types": "^15.8.1",
     "ramda": "^0.28.0",
     "react": "^17.0.2",
-    "react-bootstrap": "^2.2.2",
+    "react-bootstrap": "^2.4.0",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
-    "react-scroll": "^1.8.6",
+    "react-scroll": "^1.8.7",
     "throttle-debounce": "^3.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.17.10",
     "@babel/eslint-parser": "^7.17.0",
-    "babel-plugin-import": "^1.13.3",
+    "babel-plugin-import": "^1.13.5",
     "babel-plugin-module-resolver": "^4.1.0",
     "babel-plugin-transform-imports": "^2.0.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
@@ -57,7 +57,7 @@
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.4.0",
     "gatsby-plugin-eslint": "^4.0.2",
-    "prettier": "^2.6.1"
+    "prettier": "^2.6.2"
   },
   "homepage": "https://thundermiracle.github.io/gatsby-startbootstrap-agency",
   "keywords": [
