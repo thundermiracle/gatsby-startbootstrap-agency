@@ -1,47 +1,5 @@
 {
-  "extends": [
-    "config:base",
-    "schedule:monthly",
-    "group:allNonMajor",
-    "group:gatsbyMonorepo",
-    "group:linters",
-    "group:babelMonorepo",
-    "docker:disable"
-  ],
-  "rebaseWhen": "conflicted",
-  "labels": [
-    "dependencies"
-  ],
-  "rangeStrategy": "bump",
-  "platformCommit": true,
-  "platformAutomerge": true,
-  "automerge": false,
-  "packageRules": [
-    {
-      "groupName": "Font Awesome",
-      "matchPackagePatterns": [
-        "@fortawesome/*",
-        "@styled-icons/*"
-      ]
-    },
-    {
-      "extends": "packages:linters",
-      "groupName": "linters",
-      "automerge": true
-    },
-    {
-      "extends": "monorepo:babel",
-      "matchUpdateTypes": [
-        "digest",
-        "patch",
-        "minor",
-        "major"
-      ],
-      "groupName": "babel monorepo",
-      "automerge": true
-    }
-  ],
-  "ignoreDeps": [
-    "node"
-  ]
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Onboarding preset for use with ThunderMiracle's repos",
+  "extends": ["github>thundermiracle/.github"]
 }
