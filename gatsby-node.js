@@ -101,3 +101,14 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
     );
   });
 };
+
+/**
+ * Disable sourcemap
+ */
+exports.onCreateWebpackConfig = ({ getConfig, actions }) => {
+  if (getConfig().mode === 'production') {
+    actions.setWebpackConfig({
+      devtool: false
+    });
+  }
+};
