@@ -31,9 +31,9 @@
     "node-sass": "^6.0.1",
     "prop-types": "^15.8.1",
     "ramda": "^0.28.0",
-    "react": "^17.0.2",
+    "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
-    "react-dom": "^17.0.2",
+    "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-scroll": "^1.8.7",
     "throttle-debounce": "^5.0.0"
