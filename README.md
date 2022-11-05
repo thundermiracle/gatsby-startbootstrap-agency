@@ -1,3 +1,9 @@
+> **Important note: As I migrated my HP from GatsbyJS to Next.js, this project will not be maintained! But current one absolutely works!**
+>
+> **If you're interested in Next.js' version. Check it here: https://github.com/thundermiracle/next-startbootstrap-agency**
+
+<br />
+
 <h1 align="center">
   Gatsyby startbootstrap-agency
 </h1>
