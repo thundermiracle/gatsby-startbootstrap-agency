@@ -1,6 +1,8 @@
 > **Important note: As I migrated my HP from GatsbyJS to Next.js, this project will not be maintained! But current one absolutely works!**
 >
 > **If you're interested in Next.js' version. Check it here: https://github.com/thundermiracle/next-startbootstrap-agency**
+>
+> **Why I chose Next.js now: https://thundermiracle.com/blog/en/2022-11-05-migrate-from-gatsbyjs-to-next/**
 
 <br />
 
