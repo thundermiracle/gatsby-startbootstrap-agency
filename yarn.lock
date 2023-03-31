@@ -7035,10 +7035,10 @@ gatsby-plugin-sass@^5.25.0:
     resolve-url-loader "^3.1.4"
     sass-loader "^10.1.1"
 
-gatsby-plugin-sharp@^4.25.0:
-  version "4.25.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-4.25.0.tgz#9af5e1be2b82c67aa64711675850f0ba4e7e3b0e"
-  integrity sha512-8XiSKibQyp6pOFHEkEdRCpoDA3Ywcq5PKftNMExZ51MormT0+WqRC7ynuU+0fzktDTbbSyREvblKa+21Id+rRA==
+gatsby-plugin-sharp@^4.25.1:
+  version "4.25.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-4.25.1.tgz#dcc31bdc698511501acc9b95ba277844c15a7576"
+  integrity sha512-cGRb8lmwJkzwT1Qze0R+VL+55BIb9weM17m+dUf6gs5Z++lQltqge+L8a1qWWsGL6KfLQN7+bIqjhmTTscIPMQ==
   dependencies:
     "@babel/runtime" "^7.15.4"
     async "^3.2.4"
