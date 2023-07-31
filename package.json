@@ -28,7 +28,7 @@
     "gatsby-source-filesystem": "^4.25.0",
     "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^4.25.0",
-    "node-sass": "^6.0.1",
+    "node-sass": "^9.0.0",
     "prop-types": "^15.8.1",
     "ramda": "^0.28.0",
     "react": "^18.2.0",
