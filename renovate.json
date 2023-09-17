@@ -1,5 +1,0 @@
-{
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Onboarding preset for use with ThunderMiracle's repos",
-  "extends": ["github>thundermiracle/.github"]
-}
